@@ -5,26 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/IGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/IGraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SaraLuciaa"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SaraLuciaa&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -50,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure",
+    "last_opened_file_path": "C:/Users/tomot/OneDrive - Universidad Icesi (@icesi.edu.co)/Escritorio/ProyectosAPO2/space-adventure/src/main/java/structure/Graph2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,6 +79,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tomot\OneDrive - Universidad Icesi (@icesi.edu.co)\Escritorio\ProyectosAPO2\space-adventure\src\main\java\structure\Graph2" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -72,31 +87,31 @@
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest.testConsult3">
-    <configuration name="GraphTest.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="GraphTest1.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
       <option name="METHOD_NAME" value="testBFS2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest.testConsult3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphTest1.testConsult3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
       <option name="METHOD_NAME" value="testConsult3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest.testConsultNode2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphTest1.testConsultNode2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
       <option name="METHOD_NAME" value="testConsultNode2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -105,9 +120,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphTest.testConsult3" />
-        <item itemvalue="JUnit.GraphTest.testConsultNode2" />
-        <item itemvalue="JUnit.GraphTest.testBFS2" />
+        <item itemvalue="JUnit.GraphTest1.testConsult3" />
+        <item itemvalue="JUnit.GraphTest1.testConsultNode2" />
+        <item itemvalue="JUnit.GraphTest1.testBFS2" />
       </list>
     </recent_temporary>
   </component>

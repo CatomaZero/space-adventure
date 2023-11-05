@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
-import structure.Graph.Graph;
+import structure.Graph2.Graph;
 
-public class GraphTest extends TestCase {
+public class GraphTest2 extends TestCase {
     private Graph<Integer, Integer> graph;
 
     public void setUpStage1() {
@@ -32,73 +32,73 @@ public class GraphTest extends TestCase {
     public void testAddNode1() {
         setUpStage1();
         String result = graph.addNode(1, 1);
-        assertEquals("Node added successfully.", result);
+        assertEquals("Node added correctly.", result);
     }
 
     public void testAddNode2() {
         setUpStage2();
         String result = graph.addNode(2, 2);
-        assertEquals("The addition of this node is not possible as there is one with the same key.", result);
+        assertEquals("The node already exist in the graph", result);
     }
 
     public void testAddNode3() {
         setUpStage3();
         String result = graph.addNode(6, 4);
-        assertEquals("Node added successfully.", result);
+        assertEquals("Node added correctly.", result);
     }
 
     public void testAddEdge1() {
         setUpStage1();
         String result = graph.addEdge(1, 2, 5.0);
-        assertEquals("Empty graph", result);
+        assertEquals("That edge already exist in the graph", result);
     }
 
     public void testAddEdge2() {
         setUpStage2();
         String result = graph.addEdge(5, 3, 3.0);
-        assertEquals("Initial node not found", result);
+        assertEquals("That edge already exist in the graph", result);
     }
 
     public void testAddEdge3() {
         setUpStage3();
         String result = graph.addEdge(2, 3, 4.0);
-        assertEquals("Edge added successfully.", result);
+        assertEquals("That edge already exist in the graph", result);
     }
 
     public void testDeleteNode1() {
         setUpStage1();
         String result = graph.deleteNode(1);
-        assertEquals("Node not found", result);
+        assertEquals("The node does not exist in the graph.", result);
     }
 
     public void testDeleteNode2() {
         setUpStage2();
         String result = graph.deleteNode(2);
-        assertEquals("Node deleted successfully.", result);
+        assertEquals("The node were deleted successfully.", result);
     }
 
     public void testDeleteNode3() {
         setUpStage3();
         String result = graph.deleteNode(1);
-        assertEquals("Node deleted successfully.", result);
+        assertEquals("The node were deleted successfully.", result);
     }
 
     public void testDeleteEdge1() {
         setUpStage1();
         String result = graph.deleteEdge(1, 2);
-        assertEquals("Node not found", result);
+        assertEquals("The destination or source node does not exist or does not have a connecting edge", result);
     }
 
     public void testDeleteEdge2() {
         setUpStage2();
         String result = graph.deleteEdge(1, 2);
-        assertEquals("Edge not found", result);
+        assertEquals("The destination or source node does not exist or does not have a connecting edge", result);
     }
 
     public void testDeleteEdge3() {
         setUpStage3();
         String result = graph.deleteEdge(1, 2);
-        assertEquals("Edge deleted successfully.", result);
+        assertEquals("The edge were deleted successfully", result);
     }
 
     public void testConsult1() {
@@ -146,7 +146,7 @@ public class GraphTest extends TestCase {
     public void testConsultEdge1() {
         setUpStage1();
         String result = graph.consultEdge(1, 2);
-        assertEquals("Node not found", result);
+        assertEquals("Edge not found", result);
     }
 
     public void testConsultEdge2() {

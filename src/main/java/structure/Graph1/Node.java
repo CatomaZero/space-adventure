@@ -1,4 +1,6 @@
-package structure.Graph;
+package structure.Graph1;
+
+import structure.Graph1.Edge;
 
 import java.util.ArrayList;
 public class Node<K, D> {

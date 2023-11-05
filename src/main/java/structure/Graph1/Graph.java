@@ -1,9 +1,12 @@
-package structure.Graph;
+package structure.Graph1;
+
+import structure.Graph2.Node2;
+import structure.IGraph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Graph<K, D> implements IGraph<K, D>{
+public class Graph<K, D> implements IGraph<K, D> {
     private ArrayList<Node<K, D>> adjacency;
     private ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
@@ -219,6 +222,11 @@ public class Graph<K, D> implements IGraph<K, D>{
                 return node;
             }
         }
+        return null;
+    }
+
+    @Override
+    public Node2<K, D> searchNode2(K key) {
         return null;
     }
 

@@ -1,4 +1,7 @@
-package structure.Graph;
+package structure;
+
+import structure.Graph1.Node;
+import structure.Graph2.Node2;
 
 public interface IGraph<K, D> {
     String addNode(K key, D data);
@@ -10,4 +13,5 @@ public interface IGraph<K, D> {
     String BFS(K key);
     boolean isStronglyConnected();
     Node<K, D> searchNode(K key);
+    Node2<K, D> searchNode2(K key);
 }
