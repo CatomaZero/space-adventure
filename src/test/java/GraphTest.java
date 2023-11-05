@@ -100,4 +100,64 @@ public class GraphTest extends TestCase {
         String result = graph.deleteEdge(1, 2);
         assertEquals("Edge deleted successfully.", result);
     }
+
+    public void testConsult1() {
+        setUpStage1();
+        String result = graph.consult();
+        assertEquals("", result);
+    }
+
+    public void testConsult2() {
+        setUpStage2();
+        String result = graph.consult();
+        String expected = "Key: 1\nData: 1\nEdges: \nKey: 2\nData: 2\nEdges: \nKey: 3\nData: 3\nEdges:";
+        assertEquals(expected, result);
+    }
+
+    public void testConsult3() {
+        setUpStage3();
+        String result = graph.consult();
+        String expected = "Key: 1\nData: 1\nEdges: \n     (1, 2)   Weight: 5.0\n     (5, 1)   Weight: 5.0\n" +
+                "Key: 2\nData: 2\nEdges: \n     (1, 2)   Weight: 5.0\n     (2, 3)   Weight: 2.0\n" +
+                "Key: 3\nData: 3\nEdges: \n     (2, 3)   Weight: 2.0\n     (3, 4)   Weight: 5.0\n     (3, 5)   Weight: 2.0\n" +
+                "Key: 4\nData: 4\nEdges: \n     (3, 4)   Weight: 5.0\n" +
+                "Key: 5\nData: 5\nEdges: \n     (3, 5)   Weight: 2.0\n     (5, 1)   Weight: 5.0";
+        assertEquals(expected, result);
+    }
+
+    public void testConsultNode1() {
+        setUpStage1();
+        String result = graph.consultNode(1);
+        assertEquals("Node not found", result);
+    }
+
+    public void testConsultNode2() {
+        setUpStage2();
+        String result = graph.consultNode(2);
+        assertEquals("Key: 2\nData: 2\nEdges: ", result);
+    }
+
+    public void testConsultNode3() {
+        setUpStage3();
+        String result = graph.consultNode(4);
+        assertEquals("Key: 4\nData: 4\nEdges: \n     (3, 4)   Weight: 5.0", result);
+    }
+
+    public void testConsultEdge1() {
+        setUpStage1();
+        String result = graph.consultEdge(1, 2);
+        assertEquals("Node not found", result);
+    }
+
+    public void testConsultEdge2() {
+        setUpStage2();
+        String result = graph.consultEdge(1, 3);
+        assertEquals("Edge not found", result);
+    }
+
+    public void testConsultEdge3() {
+        setUpStage3();
+        String result = graph.consultEdge(1, 2);
+        assertEquals("(1, 2)   Weight: 5.0", result);
+    }
 }

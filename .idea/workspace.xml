@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.GraphTest.testConsult3">
     <configuration name="GraphTest.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
@@ -82,8 +83,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GraphTest.testConsult3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="METHOD_NAME" value="testConsult3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest.testConsultNode2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTest" />
+      <option name="METHOD_NAME" value="testConsultNode2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphTest.testConsult3" />
+        <item itemvalue="JUnit.GraphTest.testConsultNode2" />
         <item itemvalue="JUnit.GraphTest.testBFS2" />
       </list>
     </recent_temporary>
@@ -100,7 +123,7 @@
       <workItem from="1699144960243" duration="631000" />
       <workItem from="1699146058581" duration="1600000" />
       <workItem from="1699147684375" duration="5254000" />
-      <workItem from="1699154816842" duration="14786000" />
+      <workItem from="1699154816842" duration="16631000" />
     </task>
     <servers />
   </component>
