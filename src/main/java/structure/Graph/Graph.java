@@ -33,8 +33,6 @@ public class Graph<K, D> implements IGraph<K, D>{
         }
         adjacencyMatrix.add(row);
 
-        printAdjacencyMatrix();
-
         return "Node added successfully.";
     }
 
@@ -63,8 +61,6 @@ public class Graph<K, D> implements IGraph<K, D>{
         int indexTerminal = adjacency.lastIndexOf(terminal);
         adjacencyMatrix.get(indexInitial).set(indexTerminal, 1);
         adjacencyMatrix.get(indexTerminal).set(indexInitial, 1);
-
-        printAdjacencyMatrix();
 
         return "Edge added successfully.";
     }
@@ -109,34 +105,41 @@ public class Graph<K, D> implements IGraph<K, D>{
     }
 
     @Override
-    public String deleteEdge(K keyInitial, K keyTerminal){
-        Node<K,D> initial = searchNode(keyInitial);
-        Node<K,D> terminal = searchNode(keyTerminal);
-        if(initial == null || terminal == null){
+    public String deleteEdge(K keyInitial, K keyTerminal) {
+        Node<K, D> initial = searchNode(keyInitial);
+        Node<K, D> terminal = searchNode(keyTerminal);
+
+        if (initial == null || terminal == null) {
             return "Node not found";
         }
 
-        ArrayList<Edge<K,D>> edges = initial.getEdges();
-        boolean flag = true;
-        for (int i = 0; flag && i < edges.size(); i++) {
-            if((edges.get(i).getInitial() == initial && edges.get(i).getTerminal() == terminal) || (edges.get(i).getInitial() == terminal && edges.get(i).getTerminal() == initial)){
-                edges.remove(edges.get(i));
-                flag = false;
-            }
+        if (deleteEdgeAux(initial, terminal) && deleteEdgeAux(terminal, initial)) {
+            return "Edge deleted successfully.";
+        } else {
+            return "Edge not found";
         }
-
-        boolean flag2 = true;
-        edges = terminal.getEdges();
-        for (int i = 0; flag2 && i < edges.size(); i++) {
-            if((edges.get(i).getInitial() == initial && edges.get(i).getTerminal() == terminal) || (edges.get(i).getInitial() == terminal && edges.get(i).getTerminal() == initial)){
-                edges.remove(edges.get(i));
-                flag2 = false;
-            }
-        }
-
-        return flag&&flag2?"Edge not found":"Edge deleted successfully.";
     }
-    
+
+    private boolean deleteEdgeAux(Node<K, D> node1, Node<K, D> node2) {
+        ArrayList<Edge<K, D>> edges = node1.getEdges();
+        for (int i = 0; i < edges.size(); i++) {
+            Edge<K, D> edge = edges.get(i);
+            if ((edge.getInitial() == node1 && edge.getTerminal() == node2) || (edge.getInitial() == node2 && edge.getTerminal() == node1)) {
+                edges.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String consult(){
+        String result = "";
+        for (Node<K,D> node : adjacency) {
+            result += consultNode(node.getKey()) + "\n";
+        }
+        return result.trim();
+    }
+
     @Override
     public String consultNode(K key){
         Node<K,D> node = searchNode(key);
