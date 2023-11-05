@@ -20,14 +20,6 @@ public class GraphTest extends TestCase {
         graph.addNode(1, 1);
         graph.addNode(2, 2);
         graph.addNode(3, 3);
-        graph.addEdge(1, 2, 5.0);
-    }
-
-    public void setUpStage4() {
-        graph = new Graph<>();
-        graph.addNode(1, 1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
         graph.addNode(4, 4);
         graph.addNode(5, 5);
         graph.addEdge(1, 2, 5.0);
@@ -51,7 +43,7 @@ public class GraphTest extends TestCase {
 
     public void testAddNode3() {
         setUpStage3();
-        String result = graph.addNode(4, 4);
+        String result = graph.addNode(6, 4);
         assertEquals("Node added successfully.", result);
     }
 

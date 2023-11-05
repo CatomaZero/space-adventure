@@ -95,15 +95,15 @@ public class Graph<K, D> implements IGraph<K, D>{
                 }
             }
         }
-        // Finalmente eliminamos el nodo de la lista de adjacencia
-        adjacency.remove(node);
 
         // Matrix
         int index = adjacency.indexOf(node);
+        System.out.println(index);
         for (ArrayList<Integer> i: adjacencyMatrix) {
             i.remove(index);
         }
         adjacencyMatrix.remove(index);
+        adjacency.remove(node);
 
         return "Node deleted successfully.";
     }
