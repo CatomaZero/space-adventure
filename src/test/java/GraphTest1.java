@@ -29,6 +29,26 @@ public class GraphTest1 extends TestCase {
         graph.addEdge(5, 1, 5.0);
     }
 
+    public void setUpStage4() {
+        graph = new Graph<>();
+        graph.addNode(1, 1);
+        graph.addNode(2, 2);
+        graph.addNode(3, 3);
+        graph.addNode(4, 4);
+        graph.addNode(5, 5);
+        graph.addNode(6, 5);
+        graph.addNode(7, 5);
+        graph.addNode(8, 5);
+        graph.addEdge(1, 2, 5.0);
+        graph.addEdge(1, 3, 2.0);
+        graph.addEdge(2, 4, 5.0);
+        graph.addEdge(2, 5, 2.0);
+        graph.addEdge(3, 6, 5.0);
+        graph.addEdge(3, 7, 5.0);
+        graph.addEdge(3, 8, 5.0);
+        graph.addEdge(5, 6, 5.0);
+    }
+
     public void testAddNode1() {
         setUpStage1();
         String result = graph.addNode(1, 1);
@@ -159,5 +179,10 @@ public class GraphTest1 extends TestCase {
         setUpStage3();
         String result = graph.consultEdge(1, 2);
         assertEquals("(1, 2)   Weight: 5.0", result);
+    }
+
+    public void testDFS1(){
+        setUpStage4();
+        assertEquals("1 2 4 5 6 3 7 8", graph.DFS(1));
     }
 }

@@ -204,6 +204,39 @@ public class Graph<K, D> implements IGraph<K, D> {
         return result.trim();
     }
 
+    public String DFS(K key){
+        if(adjacency.isEmpty()){
+            return "Empty graph";
+        }
+
+        Node<K, D> node = searchNode(key);
+        if(node == null){
+            return "Node not found";
+        }
+
+        boolean[] visited = new boolean[adjacency.size()];
+
+        return DFSAux(key, visited).trim();
+    }
+
+    private String DFSAux(K key, boolean[] visited){
+        Node<K, D> current = searchNode(key);
+        int index = adjacency.indexOf(current);
+
+        visited[index] = true;
+        String result = current.getKey() + " ";
+
+        for(Edge<K, D> edge : current.getEdges()){
+            Node<K, D> currentV = current==edge.getTerminal()?edge.getInitial():edge.getTerminal();
+            // Node<K, D> currentV = edge.getTerminal();
+            if(!visited[adjacency.indexOf(currentV)]){
+                result += DFSAux(currentV.getKey(), visited);
+            }
+        }
+
+        return result;
+    }
+
     @Override
     public boolean isStronglyConnected() {
         for(Node<K, D> v : adjacency){
