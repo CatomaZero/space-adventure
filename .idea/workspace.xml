@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph1/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph1/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/IGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/IGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest2.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomot/OneDrive - Universidad Icesi (@icesi.edu.co)/Escritorio/ProyectosAPO2/space-adventure/src/main/java/structure/Graph2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,6 +81,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java\structure" />
       <recent name="C:\Users\tomot\OneDrive - Universidad Icesi (@icesi.edu.co)\Escritorio\ProyectosAPO2\space-adventure\src\main\java\structure\Graph2" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure" />
     </key>
@@ -151,6 +162,9 @@
       <workItem from="1699146058581" duration="1600000" />
       <workItem from="1699147684375" duration="5254000" />
       <workItem from="1699154816842" duration="16631000" />
+      <workItem from="1700161879546" duration="2256000" />
+      <workItem from="1700172455603" duration="10008000" />
+      <workItem from="1700255101087" duration="658000" />
     </task>
     <servers />
   </component>

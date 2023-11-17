@@ -1,6 +1,8 @@
 import junit.framework.TestCase;
 import structure.Graph1.Graph;
 
+import java.util.Arrays;
+
 public class GraphTest1 extends TestCase {
     private Graph<Integer, Integer> graph;
 
@@ -47,6 +49,33 @@ public class GraphTest1 extends TestCase {
         graph.addEdge(3, 7, 5.0);
         graph.addEdge(3, 8, 5.0);
         graph.addEdge(5, 6, 5.0);
+    }
+
+    public void setupStage5(){
+        graph = new Graph<>();
+        graph.addNode(0, 0);
+        graph.addNode(1,1);
+        graph.addNode(2, 2);
+        graph.addNode(3, 3);
+        graph.addNode(4, 4);
+        graph.addNode(5, 5);
+        graph.addNode(6, 5);
+        graph.addNode(7, 5);
+        graph.addNode(8, 5);
+        graph.addEdge(0, 1, 4.0);
+        graph.addEdge(0, 7, 8.0);
+        graph.addEdge(1, 2, 8.0);
+        graph.addEdge(1, 7, 11.0);
+        graph.addEdge(2, 3, 7.0);
+        graph.addEdge(2, 8, 2.0);
+        graph.addEdge(2, 5, 4.0);
+        graph.addEdge(3, 4, 9.0);
+        graph.addEdge(3, 5, 14.0);
+        graph.addEdge(4, 5, 10.0);
+        graph.addEdge(5, 6, 2.0);
+        graph.addEdge(6, 7, 1.0);
+        graph.addEdge(6, 8, 6.0);
+        graph.addEdge(7, 8, 7.0);
     }
 
     public void testAddNode1() {
@@ -184,5 +213,10 @@ public class GraphTest1 extends TestCase {
     public void testDFS1(){
         setUpStage4();
         assertEquals("1 2 4 5 6 3 7 8", graph.DFS(1));
+    }
+
+    public void testDijkstra1(){
+        setupStage5();
+        assertEquals("[0.0, 4.0, 12.0, 19.0, 21.0, 11.0, 9.0, 8.0, 14.0]", Arrays.toString(graph.dijkstra(0)));
     }
 }

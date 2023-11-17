@@ -3,16 +3,15 @@ package structure.Graph1;
 import structure.Graph2.Node2;
 import structure.IGraph;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Graph<K, D> implements IGraph<K, D> {
     private ArrayList<Node<K, D>> adjacency;
-    private ArrayList<ArrayList<Integer>> adjacencyMatrix;
+    // private ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
     public Graph(){
         this.adjacency = new ArrayList<>();
-        this.adjacencyMatrix = new ArrayList<>();
+        // this.adjacencyMatrix = new ArrayList<>();
     }
 
     @Override
@@ -25,6 +24,7 @@ public class Graph<K, D> implements IGraph<K, D> {
         Node<K, D> v = new Node<>(key, data);
         adjacency.add(v);
 
+        /*
         // Matrix
         ArrayList<Integer> row = new ArrayList<>();
         row.add(0);
@@ -35,6 +35,7 @@ public class Graph<K, D> implements IGraph<K, D> {
             }
         }
         adjacencyMatrix.add(row);
+        */
 
         return "Node added successfully.";
     }
@@ -59,11 +60,13 @@ public class Graph<K, D> implements IGraph<K, D> {
         initial.addEdge(edge);
         terminal.addEdge(edge);
 
+        /*
         // Matrix
         int indexInitial = adjacency.indexOf(initial);
         int indexTerminal = adjacency.lastIndexOf(terminal);
         adjacencyMatrix.get(indexInitial).set(indexTerminal, 1);
         adjacencyMatrix.get(indexTerminal).set(indexInitial, 1);
+        */
 
         return "Edge added successfully.";
     }
@@ -95,6 +98,8 @@ public class Graph<K, D> implements IGraph<K, D> {
             }
         }
 
+        /*
+
         // Matrix
         int index = adjacency.indexOf(node);
         System.out.println(index);
@@ -103,6 +108,9 @@ public class Graph<K, D> implements IGraph<K, D> {
         }
         adjacencyMatrix.remove(index);
         adjacency.remove(node);
+
+
+         */
 
         return "Node deleted successfully.";
     }
@@ -237,6 +245,53 @@ public class Graph<K, D> implements IGraph<K, D> {
         return result;
     }
 
+    public double[] dijkstra(K key) {
+        Node<K, D> sourceNode = searchNode(key);
+        if (sourceNode == null) {
+            return null;
+        }
+
+        int numNodes = adjacency.size();
+        double[] dist = new double[numNodes];
+        boolean[] processedNodes = new boolean[numNodes];
+        Arrays.fill(dist, Double.MAX_VALUE);
+
+        int sourceIndex = adjacency.indexOf(sourceNode);
+        dist[sourceIndex] = 0;
+
+        for (int count = 0; count < numNodes - 1; count++) {
+            int u = minDistance(dist, processedNodes);
+            processedNodes[u] = true;
+
+            Node<K, D> uNode = adjacency.get(u);
+
+            for (int v = 0; v < numNodes; v++) {
+                Edge<K, D> edgeUV = uNode.searchEdge(adjacency.get(v));
+                if (!processedNodes[v] && edgeUV != null) {
+                    double temp = dist[u] + edgeUV.getWeight();
+                    if (temp < dist[v]) {
+                        dist[v] = temp;
+                    }
+                }
+            }
+        }
+
+        return dist;
+    }
+
+    public int minDistance(double[] dist, boolean[] flags) {
+        double min = Double.MAX_VALUE;
+        int min_index = -1;
+ 
+        for (int v = 0; v < adjacency.size(); v++)
+            if (flags[v] == false && dist[v] <= min) {
+                min = dist[v];
+                min_index = v;
+            }
+ 
+        return min_index;
+    }
+
     @Override
     public boolean isStronglyConnected() {
         for(Node<K, D> v : adjacency){
@@ -265,11 +320,14 @@ public class Graph<K, D> implements IGraph<K, D> {
 
     //  Temporal method
     public void printAdjacencyMatrix(){
+        /*
         for (ArrayList<Integer> matrix : adjacencyMatrix) {
             for (Integer integer : matrix) {
                 System.out.print(integer);
             }
             System.out.println();
         }
+
+         */
     }
 }

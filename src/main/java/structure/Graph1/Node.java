@@ -1,7 +1,5 @@
 package structure.Graph1;
 
-import structure.Graph1.Edge;
-
 import java.util.ArrayList;
 public class Node<K, D> {
     private K key;
@@ -22,12 +20,17 @@ public class Node<K, D> {
         return key;
     }
 
-    public D getData() {
-        return data;
-    }
-
     public ArrayList<Edge<K, D>> getEdges() {
         return edges;
+    }
+
+    public Edge<K, D> searchEdge(Node<K, D> node){
+        for(Edge<K,D> e : edges){
+            if(e.getInitial().equals(node) || e.getTerminal().equals(node)){
+                return e;
+            }
+        }
+        return null;
     }
 
     @Override
