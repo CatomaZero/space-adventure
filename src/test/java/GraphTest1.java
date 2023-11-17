@@ -78,6 +78,18 @@ public class GraphTest1 extends TestCase {
         graph.addEdge(7, 8, 7.0);
     }
 
+    public void setUpStage6(){
+        graph = new Graph<>();
+        graph.addNode(0, 0);
+        graph.addNode(1,1);
+        graph.addNode(2, 2);
+        graph.addNode(3, 3);
+        graph.addEdge(0,1, 5.0);
+        graph.addEdge(0,3, 10.0);
+        graph.addEdge(1,2,3.0);
+        graph.addEdge(2, 3, 1.0);
+    }
+
     public void testAddNode1() {
         setUpStage1();
         String result = graph.addNode(1, 1);
@@ -218,5 +230,15 @@ public class GraphTest1 extends TestCase {
     public void testDijkstra1(){
         setupStage5();
         assertEquals("[0.0, 4.0, 12.0, 19.0, 21.0, 11.0, 9.0, 8.0, 14.0]", Arrays.toString(graph.dijkstra(0)));
+    }
+
+    public void testFloydWarshall(){
+        setUpStage6();
+        String result =
+                "0.0\t5.0\t8.0\t9.0\t\n" +
+                "5.0\t0.0\t3.0\t4.0\t\n" +
+                "8.0\t3.0\t0.0\t1.0\t\n" +
+                "9.0\t4.0\t1.0\t0.0";
+        assertEquals(result, graph.getFloydWarshallResultString());
     }
 }

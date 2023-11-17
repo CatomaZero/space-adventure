@@ -292,6 +292,63 @@ public class Graph<K, D> implements IGraph<K, D> {
         return min_index;
     }
 
+    public double[][] floydWarshall() {
+        int numNodes = adjacency.size();
+        double[][] dist = new double[numNodes][numNodes];
+
+        // Inicializar la matriz de distancias con valores infinitos
+        for (int i = 0; i < numNodes; i++) {
+            for (int j = 0; j < numNodes; j++) {
+                dist[i][j] = Double.MAX_VALUE;
+            }
+        }
+
+        // Establecer las distancias directas entre nodos
+        for (int i = 0; i < numNodes; i++) {
+            Node<K, D> node = adjacency.get(i);
+            dist[i][i] = 0;  // La distancia de un nodo a sí mismo es 0
+
+            for (Edge<K, D> edge : node.getEdges()) {
+                Node<K, D> neighbor = (node == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
+                int j = adjacency.indexOf(neighbor);
+                dist[i][j] = edge.getWeight();
+            }
+        }
+
+        // Aplicar el algoritmo de Floyd-Warshall
+        for (int k = 0; k < numNodes; k++) {
+            for (int i = 0; i < numNodes; i++) {
+                for (int j = 0; j < numNodes; j++) {
+                    if (dist[i][k] != Double.MAX_VALUE && dist[k][j] != Double.MAX_VALUE) {
+                        double temp = dist[i][k] + dist[k][j];
+                        if (temp < dist[i][j]) {
+                            dist[i][j] = temp;
+                        }
+                    }
+                }
+            }
+        }
+
+        return dist;
+    }
+
+    public String getFloydWarshallResultString() {
+        double[][] result = floydWarshall();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[i].length; j++) {
+                if (result[i][j] == Double.MAX_VALUE) {
+                    stringBuilder.append("INF\t");
+                } else {
+                    stringBuilder.append(result[i][j]).append("\t");
+                }
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString().trim();
+    }
+
+
     @Override
     public boolean isStronglyConnected() {
         for(Node<K, D> v : adjacency){

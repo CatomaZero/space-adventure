@@ -147,6 +147,7 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return matrixString.toString();
     }
+
     public String getAdjacencyList(K key){
         Node2<K,D> node=null;
         if(searchNode2(key)!=null){
