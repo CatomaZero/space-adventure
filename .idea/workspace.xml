@@ -49,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java\structure" />
@@ -79,7 +79,7 @@
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest1">
+  <component name="RunManager" selected="JUnit.GraphTest1.testKruskal">
     <configuration name="GraphTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
@@ -99,21 +99,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest1.testConsult3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphTest1.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphTest1" />
-      <option name="METHOD_NAME" value="testConsult3" />
+      <option name="METHOD_NAME" value="testKruskal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest1.testConsultNode2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GraphTest1.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GraphTest1" />
-      <option name="METHOD_NAME" value="testConsultNode2" />
+      <option name="METHOD_NAME" value="testPrim" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphTest1.testKruskal" />
+        <item itemvalue="JUnit.GraphTest1.testPrim" />
         <item itemvalue="JUnit.GraphTest1" />
         <item itemvalue="JUnit.GraphTest2" />
         <item itemvalue="JUnit.GraphTest1.testBFS2" />
-        <item itemvalue="JUnit.GraphTest1.testConsult3" />
-        <item itemvalue="JUnit.GraphTest1.testConsultNode2" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +153,8 @@
       <workItem from="1699154816842" duration="16631000" />
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
-      <workItem from="1700255101087" duration="8063000" />
+      <workItem from="1700255101087" duration="8095000" />
+      <workItem from="1700320316539" duration="4597000" />
     </task>
     <servers />
   </component>

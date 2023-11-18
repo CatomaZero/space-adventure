@@ -348,44 +348,90 @@ public class Graph<K, D> implements IGraph<K, D> {
         return stringBuilder.toString().trim();
     }
 
-    public ArrayList<Edge<K, D>> prim() {
-        if (adjacency.isEmpty()) {
-            return null;
+    private String printMST(ArrayList<Edge<K, D>> mstEdges) {
+        StringBuilder result = new StringBuilder();
+        for (Edge<K, D> edge : mstEdges) {
+            result.append(edge.toString()).append("\n");
         }
+        return result.toString().trim();
+    }
 
-        ArrayList<Edge<K, D>> minimumSpanningTree = new ArrayList<>();
+    public String primMST() {
+        K startNodeKey = adjacency.get(0).getKey();
+        ArrayList<Edge<K, D>> mstEdges = new ArrayList<>();
+        int numNodes = adjacency.size();
+        boolean[] visited = new boolean[numNodes];
+
         PriorityQueue<Edge<K, D>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
-        boolean[] visitedNodes = new boolean[adjacency.size()];
+        Node<K, D> startNode = searchNode(startNodeKey);
 
-        Node<K, D> startNode = adjacency.get(0);
-        visitedNodes[adjacency.indexOf(startNode)] = true;
+        visited[adjacency.indexOf(startNode)] = true;
 
-        for (Edge<K, D> edge : startNode.getEdges()) {
-            priorityQueue.add(edge);
-        }
+        while (mstEdges.size() < numNodes - 1) {
+            ArrayList<Edge<K, D>> edges = startNode.getEdges();
+            for (Edge<K, D> edge : edges) {
+                Node<K, D> neighbor = (startNode == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
 
-        while (!priorityQueue.isEmpty()) {
-            Edge<K, D> minEdge = priorityQueue.poll();
-            Node<K, D> nextNode = (visitedNodes[adjacency.indexOf(minEdge.getInitial())])
-                    ? minEdge.getTerminal()
-                    : minEdge.getInitial();
-
-            int nextNodeIndex = adjacency.indexOf(nextNode);
-
-            if (!visitedNodes[nextNodeIndex]) {
-                visitedNodes[nextNodeIndex] = true;
-                minimumSpanningTree.add(minEdge);
-
-                for (Edge<K, D> edge : nextNode.getEdges()) {
-                    int edgeIndex = adjacency.indexOf(edge.getTerminal());
-                    if (!visitedNodes[edgeIndex]) {
-                        priorityQueue.add(edge);
-                    }
+                if (!visited[adjacency.indexOf(neighbor)]) {
+                    priorityQueue.add(edge);
                 }
+            }
+
+            Edge<K, D> minEdge = priorityQueue.poll();
+            Node<K, D> nextNode = (startNode == minEdge.getTerminal()) ? minEdge.getInitial() : minEdge.getTerminal();
+
+            if (!visited[adjacency.indexOf(nextNode)]) {
+                mstEdges.add(minEdge);
+                visited[adjacency.indexOf(nextNode)] = true;
+                startNode = nextNode;
             }
         }
 
-        return minimumSpanningTree;
+        return printMST(mstEdges);
+    }
+
+    public String kruskalMST() {
+        ArrayList<Edge<K, D>> mstEdges = new ArrayList<>();
+        int numNodes = adjacency.size();
+
+        ArrayList<Edge<K, D>> edges = new ArrayList<>();
+        for (Node<K, D> node : adjacency) {
+            edges.addAll(node.getEdges());
+        }
+
+        edges.sort(Comparator.comparingDouble(Edge::getWeight));
+
+        Map<K, K> parent = new HashMap<>();
+        for (Node<K, D> node : adjacency) {
+            parent.put(node.getKey(), node.getKey());
+        }
+
+        for (Edge<K, D> edge : edges) {
+            Node<K, D> initial = edge.getInitial();
+            Node<K, D> terminal = edge.getTerminal();
+            K rootInitial = find(parent, initial.getKey());
+            K rootTerminal = find(parent, terminal.getKey());
+
+            if (!rootInitial.equals(rootTerminal)) {
+                mstEdges.add(edge);
+                union(parent, rootInitial, rootTerminal);
+            }
+        }
+
+        return printMST(mstEdges);
+    }
+
+    private K find(Map<K, K> parent, K nodeKey) {
+        if (!parent.get(nodeKey).equals(nodeKey)) {
+            parent.put(nodeKey, find(parent, parent.get(nodeKey)));
+        }
+        return parent.get(nodeKey);
+    }
+
+    private void union(Map<K, K> parent, K x, K y) {
+        K rootX = find(parent, x);
+        K rootY = find(parent, y);
+        parent.put(rootX, rootY);
     }
 
     @Override

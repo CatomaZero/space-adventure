@@ -91,6 +91,7 @@ public class GraphTest1 extends TestCase {
     }
 
     public void setUpStage7(){
+        graph = new Graph<>();
         graph.addNode(0, 0);
         graph.addNode(1,1);
         graph.addNode(2, 2);
@@ -114,6 +115,30 @@ public class GraphTest1 extends TestCase {
         graph.addEdge(6, 7, 1.0);
         graph.addEdge(6, 8, 6.0);
         graph.addEdge(7, 8, 7.0);
+    }
+
+    public void setUpStage8(){
+        graph = new Graph<>();
+        graph.addNode(0, 0);
+        graph.addNode(1,1);
+        graph.addNode(2, 2);
+        graph.addNode(3, 3);
+        graph.addNode(5, 5);
+        graph.addEdge(0, 1, 4.0);
+        graph.addEdge(0, 2, 4.0);
+        graph.addEdge(1, 2, 2.0);
+        graph.addEdge(1, 0, 4.0);
+        graph.addEdge(2, 0, 4.0);
+        graph.addEdge(2, 1, 2.0);
+        graph.addEdge(2, 3, 3.0);
+        graph.addEdge(2, 5, 2.0);
+        graph.addEdge(2, 4, 4.0);
+        graph.addEdge(3, 2, 3.0);
+        graph.addEdge(3, 4, 3.0);
+        graph.addEdge(4, 2, 4.0);
+        graph.addEdge(4, 3, 3.0);
+        graph.addEdge(5, 2, 2.0);
+        graph.addEdge(5, 4, 3.0);
     }
 
     public void testAddNode1() {
@@ -266,5 +291,15 @@ public class GraphTest1 extends TestCase {
                 "8.0\t3.0\t0.0\t1.0\t\n" +
                 "9.0\t4.0\t1.0\t0.0";
         assertEquals(result, graph.getFloydWarshallResultString());
+    }
+
+    public void testPrim(){
+        setUpStage7();
+        assertEquals("xd", graph.primMST());
+    }
+
+    public void testKruskal(){
+        setUpStage8();
+        assertEquals("xd", graph.kruskalMST());
     }
 }
