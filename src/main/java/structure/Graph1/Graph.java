@@ -5,8 +5,8 @@ import structure.IGraph;
 
 import java.util.*;
 
-public class Graph<K, D> implements IGraph<K, D> {
-    private ArrayList<Node<K, D>> adjacency;
+public class Graph<K> {
+    private ArrayList<Node<K>> adjacency;
     // private ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
     public Graph(){
@@ -14,14 +14,13 @@ public class Graph<K, D> implements IGraph<K, D> {
         // this.adjacencyMatrix = new ArrayList<>();
     }
 
-    @Override
-    public String addNode(K key, D data){
+    public String addNode(K key){
         if(searchNode(key)!=null){
             return "The addition of this node is not possible as there is one with the same key.";
         }
 
         // List
-        Node<K, D> v = new Node<>(key, data);
+        Node<K> v = new Node<>(key);
         adjacency.add(v);
 
         /*
@@ -40,14 +39,13 @@ public class Graph<K, D> implements IGraph<K, D> {
         return "Node added successfully.";
     }
 
-    @Override
     public String addEdge(K keyInitial, K keyTerminal, Double weight){
         if(adjacency.isEmpty()){
             return "Empty graph";
         }
 
-        Node<K, D> initial = searchNode(keyInitial);
-        Node<K, D> terminal = searchNode(keyTerminal);
+        Node<K> initial = searchNode(keyInitial);
+        Node<K> terminal = searchNode(keyTerminal);
 
         if(initial == null){
             return "Initial node not found";
@@ -56,7 +54,7 @@ public class Graph<K, D> implements IGraph<K, D> {
         }
 
         // List
-        Edge<K, D> edge = new Edge<>(weight, initial, terminal);
+        Edge<K> edge = new Edge<>(weight, initial, terminal);
         initial.addEdge(edge);
         terminal.addEdge(edge);
 
@@ -71,22 +69,21 @@ public class Graph<K, D> implements IGraph<K, D> {
         return "Edge added successfully.";
     }
 
-    @Override
     public String deleteNode(K key){
-        Node<K,D> node = searchNode(key);
+        Node<K> node = searchNode(key);
         if(node == null){
             return "Node not found";
         }
 
         // List
         // Obtener los aristas del nodo que se desea eliminar
-        ArrayList<Edge<K,D>> edges = node.getEdges();
+        ArrayList<Edge<K>> edges = node.getEdges();
         // Recorremos la lista de aristas
-        for (Edge<K,D> e : edges) {
+        for (Edge<K> e : edges) {
             // En cada arista, obtenemos su nodo terminal o inicial
-            Node<K, D> currentV = node==e.getTerminal()?e.getInitial():e.getTerminal();
+            Node<K> currentV = node==e.getTerminal()?e.getInitial():e.getTerminal();
             // Obtenemos los aristas de ese nodo
-            ArrayList<Edge<K,D>> edg = currentV.getEdges();
+            ArrayList<Edge<K>> edg = currentV.getEdges();
             // Lo recorremos para saber cual es que esta conectado al nodo que deseamos eliminar
             boolean flag = true;
             for (int i = 0; flag && i < edg.size(); i++) {
@@ -115,10 +112,9 @@ public class Graph<K, D> implements IGraph<K, D> {
         return "Node deleted successfully.";
     }
 
-    @Override
     public String deleteEdge(K keyInitial, K keyTerminal) {
-        Node<K, D> initial = searchNode(keyInitial);
-        Node<K, D> terminal = searchNode(keyTerminal);
+        Node<K> initial = searchNode(keyInitial);
+        Node<K> terminal = searchNode(keyTerminal);
 
         if (initial == null || terminal == null) {
             return "Node not found";
@@ -131,10 +127,10 @@ public class Graph<K, D> implements IGraph<K, D> {
         }
     }
 
-    private boolean deleteEdgeAux(Node<K, D> node1, Node<K, D> node2) {
-        ArrayList<Edge<K, D>> edges = node1.getEdges();
+    private boolean deleteEdgeAux(Node<K> node1, Node<K> node2) {
+        ArrayList<Edge<K>> edges = node1.getEdges();
         for (int i = 0; i < edges.size(); i++) {
-            Edge<K, D> edge = edges.get(i);
+            Edge<K> edge = edges.get(i);
             if ((edge.getInitial() == node1 && edge.getTerminal() == node2) || (edge.getInitial() == node2 && edge.getTerminal() == node1)) {
                 edges.remove(i);
                 return true;
@@ -145,29 +141,27 @@ public class Graph<K, D> implements IGraph<K, D> {
 
     public String consult(){
         String result = "";
-        for (Node<K,D> node : adjacency) {
+        for (Node<K> node : adjacency) {
             result += consultNode(node.getKey()) + "\n";
         }
         return result.trim();
     }
 
-    @Override
     public String consultNode(K key){
-        Node<K,D> node = searchNode(key);
+        Node<K> node = searchNode(key);
         return node!=null?node.toString():"Node not found";
     }
 
-    @Override
     public String consultEdge(K keyInitial, K keyTerminal){
-        Node<K,D> initial = searchNode(keyInitial);
-        Node<K,D> terminal = searchNode(keyTerminal);
+        Node<K> initial = searchNode(keyInitial);
+        Node<K> terminal = searchNode(keyTerminal);
 
         if(initial == null || terminal == null){
             return "Node not found";
         }
 
-        for(Node<K, D> node : adjacency){
-            for(Edge<K, D> edge : node.getEdges()){
+        for(Node<K> node : adjacency){
+            for(Edge<K> edge : node.getEdges()){
                 if((edge.getInitial() == initial && edge.getTerminal() == terminal) || (edge.getInitial() == terminal && edge.getTerminal() == initial)){
                     return edge.toString();
                 }
@@ -177,21 +171,20 @@ public class Graph<K, D> implements IGraph<K, D> {
         return "Edge not found";
     }
 
-    @Override
     public String BFS(K key){
         String result = "";
         if(adjacency.isEmpty()){
             return "Empty graph";
         }
 
-        Node<K, D> node = searchNode(key);
+        Node<K> node = searchNode(key);
         if(node == null){
             return "Node not found";
         }
 
         int numNode = adjacency.size();
         boolean[] visited = new boolean[numNode];
-        LinkedList<Node<K, D>> queue = new LinkedList<>();
+        LinkedList<Node<K>> queue = new LinkedList<>();
 
         visited[adjacency.indexOf(node)] = true;
         queue.add(node);
@@ -199,8 +192,8 @@ public class Graph<K, D> implements IGraph<K, D> {
         while(!queue.isEmpty()){
             node = queue.poll();
             result += node.getKey() + " ";
-            for(Edge<K, D> edge : node.getEdges()){
-                Node<K, D> currentV = node==edge.getTerminal()?edge.getInitial():edge.getTerminal();
+            for(Edge<K> edge : node.getEdges()){
+                Node<K> currentV = node==edge.getTerminal()?edge.getInitial():edge.getTerminal();
                 // Node<K, D> currentV = edge.getTerminal();
                 if(!visited[adjacency.indexOf(currentV)]){
                      visited[adjacency.indexOf(currentV)] = true;
@@ -217,7 +210,7 @@ public class Graph<K, D> implements IGraph<K, D> {
             return "Empty graph";
         }
 
-        Node<K, D> node = searchNode(key);
+        Node<K> node = searchNode(key);
         if(node == null){
             return "Node not found";
         }
@@ -228,14 +221,14 @@ public class Graph<K, D> implements IGraph<K, D> {
     }
 
     private String DFSAux(K key, boolean[] visited){
-        Node<K, D> current = searchNode(key);
+        Node<K> current = searchNode(key);
         int index = adjacency.indexOf(current);
 
         visited[index] = true;
         String result = current.getKey() + " ";
 
-        for(Edge<K, D> edge : current.getEdges()){
-            Node<K, D> currentV = current==edge.getTerminal()?edge.getInitial():edge.getTerminal();
+        for(Edge<K> edge : current.getEdges()){
+            Node<K> currentV = current==edge.getTerminal()?edge.getInitial():edge.getTerminal();
             // Node<K, D> currentV = edge.getTerminal();
             if(!visited[adjacency.indexOf(currentV)]){
                 result += DFSAux(currentV.getKey(), visited);
@@ -246,7 +239,7 @@ public class Graph<K, D> implements IGraph<K, D> {
     }
 
     public double[] dijkstra(K key) {
-        Node<K, D> sourceNode = searchNode(key);
+        Node<K> sourceNode = searchNode(key);
         if (sourceNode == null) {
             return null;
         }
@@ -263,10 +256,10 @@ public class Graph<K, D> implements IGraph<K, D> {
             int u = minDistance(dist, processedNodes);
             processedNodes[u] = true;
 
-            Node<K, D> uNode = adjacency.get(u);
+            Node<K> uNode = adjacency.get(u);
 
             for (int v = 0; v < numNodes; v++) {
-                Edge<K, D> edgeUV = uNode.searchEdge(adjacency.get(v));
+                Edge<K> edgeUV = uNode.searchEdge(adjacency.get(v));
                 if (!processedNodes[v] && edgeUV != null) {
                     double temp = dist[u] + edgeUV.getWeight();
                     if (temp < dist[v]) {
@@ -296,26 +289,23 @@ public class Graph<K, D> implements IGraph<K, D> {
         int numNodes = adjacency.size();
         double[][] dist = new double[numNodes][numNodes];
 
-        // Inicializar la matriz de distancias con valores infinitos
         for (int i = 0; i < numNodes; i++) {
             for (int j = 0; j < numNodes; j++) {
                 dist[i][j] = Double.MAX_VALUE;
             }
         }
 
-        // Establecer las distancias directas entre nodos
         for (int i = 0; i < numNodes; i++) {
-            Node<K, D> node = adjacency.get(i);
-            dist[i][i] = 0;  // La distancia de un nodo a sí mismo es 0
+            Node<K> node = adjacency.get(i);
+            dist[i][i] = 0;
 
-            for (Edge<K, D> edge : node.getEdges()) {
-                Node<K, D> neighbor = (node == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
+            for (Edge<K> edge : node.getEdges()) {
+                Node<K> neighbor = (node == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
                 int j = adjacency.indexOf(neighbor);
                 dist[i][j] = edge.getWeight();
             }
         }
 
-        // Aplicar el algoritmo de Floyd-Warshall
         for (int k = 0; k < numNodes; k++) {
             for (int i = 0; i < numNodes; i++) {
                 for (int j = 0; j < numNodes; j++) {
@@ -348,9 +338,9 @@ public class Graph<K, D> implements IGraph<K, D> {
         return stringBuilder.toString().trim();
     }
 
-    private String printMST(ArrayList<Edge<K, D>> mstEdges) {
+    private String printMST(ArrayList<Edge<K>> mstEdges) {
         StringBuilder result = new StringBuilder();
-        for (Edge<K, D> edge : mstEdges) {
+        for (Edge<K> edge : mstEdges) {
             result.append(edge.toString()).append("\n");
         }
         return result.toString().trim();
@@ -358,27 +348,27 @@ public class Graph<K, D> implements IGraph<K, D> {
 
     public String primMST() {
         K startNodeKey = adjacency.get(0).getKey();
-        ArrayList<Edge<K, D>> mstEdges = new ArrayList<>();
+        ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         int numNodes = adjacency.size();
         boolean[] visited = new boolean[numNodes];
 
-        PriorityQueue<Edge<K, D>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
-        Node<K, D> startNode = searchNode(startNodeKey);
+        PriorityQueue<Edge<K>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
+        Node<K> startNode = searchNode(startNodeKey);
 
         visited[adjacency.indexOf(startNode)] = true;
 
         while (mstEdges.size() < numNodes - 1) {
-            ArrayList<Edge<K, D>> edges = startNode.getEdges();
-            for (Edge<K, D> edge : edges) {
-                Node<K, D> neighbor = (startNode == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
+            ArrayList<Edge<K>> edges = startNode.getEdges();
+            for (Edge<K> edge : edges) {
+                Node<K> neighbor = (startNode == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
 
                 if (!visited[adjacency.indexOf(neighbor)]) {
                     priorityQueue.add(edge);
                 }
             }
 
-            Edge<K, D> minEdge = priorityQueue.poll();
-            Node<K, D> nextNode = (startNode == minEdge.getTerminal()) ? minEdge.getInitial() : minEdge.getTerminal();
+            Edge<K> minEdge = priorityQueue.poll();
+            Node<K> nextNode = (startNode == minEdge.getTerminal()) ? minEdge.getInitial() : minEdge.getTerminal();
 
             if (!visited[adjacency.indexOf(nextNode)]) {
                 mstEdges.add(minEdge);
@@ -391,24 +381,24 @@ public class Graph<K, D> implements IGraph<K, D> {
     }
 
     public String kruskalMST() {
-        ArrayList<Edge<K, D>> mstEdges = new ArrayList<>();
+        ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         int numNodes = adjacency.size();
 
-        ArrayList<Edge<K, D>> edges = new ArrayList<>();
-        for (Node<K, D> node : adjacency) {
+        ArrayList<Edge<K>> edges = new ArrayList<>();
+        for (Node<K> node : adjacency) {
             edges.addAll(node.getEdges());
         }
 
         edges.sort(Comparator.comparingDouble(Edge::getWeight));
 
         Map<K, K> parent = new HashMap<>();
-        for (Node<K, D> node : adjacency) {
+        for (Node<K> node : adjacency) {
             parent.put(node.getKey(), node.getKey());
         }
 
-        for (Edge<K, D> edge : edges) {
-            Node<K, D> initial = edge.getInitial();
-            Node<K, D> terminal = edge.getTerminal();
+        for (Edge<K> edge : edges) {
+            Node<K> initial = edge.getInitial();
+            Node<K> terminal = edge.getTerminal();
             K rootInitial = find(parent, initial.getKey());
             K rootTerminal = find(parent, terminal.getKey());
 
@@ -434,9 +424,8 @@ public class Graph<K, D> implements IGraph<K, D> {
         parent.put(rootX, rootY);
     }
 
-    @Override
     public boolean isStronglyConnected() {
-        for(Node<K, D> v : adjacency){
+        for(Node<K> v : adjacency){
             String[] keys = BFS(v.getKey()).split(" ");
             if(keys.length < adjacency.size()){
                 return false;
@@ -445,18 +434,12 @@ public class Graph<K, D> implements IGraph<K, D> {
         return true;
     }
 
-    @Override
-    public Node<K, D> searchNode(K key){
-        for (Node<K, D> node : adjacency) {
+    public Node<K> searchNode(K key){
+        for (Node<K> node : adjacency) {
             if(node.getKey().equals(key)){
                 return node;
             }
         }
-        return null;
-    }
-
-    @Override
-    public Node2<K, D> searchNode2(K key) {
         return null;
     }
 

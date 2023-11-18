@@ -1,11 +1,11 @@
 package structure.Graph1;
 
-public class Edge<K, D> {
+public class Edge<K> {
     private Double weight;
-    private Node<K, D> initial;
-    private Node<K, D> terminal;
+    private Node<K> initial;
+    private Node<K> terminal;
 
-    public Edge(Double weight, Node<K, D> initial, Node<K, D> terminal){
+    public Edge(Double weight, Node<K> initial, Node<K> terminal){
         this.weight = weight;
         this.initial = initial;
         this.terminal = terminal;
@@ -15,11 +15,11 @@ public class Edge<K, D> {
         return weight;
     }
 
-    public Node<K, D> getTerminal() {
+    public Node<K> getTerminal() {
         return terminal;
     }
 
-    public Node<K, D> getInitial() {
+    public Node<K> getInitial() {
         return initial;
     }
 

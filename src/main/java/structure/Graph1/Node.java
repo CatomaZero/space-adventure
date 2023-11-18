@@ -1,18 +1,16 @@
 package structure.Graph1;
 
 import java.util.ArrayList;
-public class Node<K, D> {
+public class Node<K> {
     private K key;
-    private D data;
-    private ArrayList<Edge<K, D>> edges;
+    private ArrayList<Edge<K>> edges;
 
-    public Node(K key, D data){
+    public Node(K key){
         this.key = key;
-        this.data = data;
         this.edges = new ArrayList<>();
     }
 
-    public void addEdge(Edge<K, D> e){
+    public void addEdge(Edge<K> e){
         edges.add(e);
     }
 
@@ -20,12 +18,12 @@ public class Node<K, D> {
         return key;
     }
 
-    public ArrayList<Edge<K, D>> getEdges() {
+    public ArrayList<Edge<K>> getEdges() {
         return edges;
     }
 
-    public Edge<K, D> searchEdge(Node<K, D> node){
-        for(Edge<K,D> e : edges){
+    public Edge<K> searchEdge(Node<K> node){
+        for(Edge<K> e : edges){
             if(e.getInitial().equals(node) || e.getTerminal().equals(node)){
                 return e;
             }
@@ -35,8 +33,8 @@ public class Node<K, D> {
 
     @Override
     public String toString() {
-        String result = "Key: " +  key + "\nData: " + data.toString() + "\nEdges: ";
-        for (Edge<K,D> e: edges ) {
+        String result = "Key: " +  key + "\nEdges: ";
+        for (Edge<K> e: edges ) {
             result += "\n     " + e.toString();
         }
         return result;

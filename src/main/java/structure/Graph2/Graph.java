@@ -6,7 +6,7 @@ import structure.IGraph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Graph<K, D> implements IGraph<K,D> {
+public class Graph<K, D> {
     private ArrayList<ArrayList<Integer>> adjacencyMatrix;
     private ArrayList<Node2<K,D>> nodes;
 
@@ -14,7 +14,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         adjacencyMatrix=new ArrayList<>();
         nodes=new ArrayList<>();
     }
-    @Override
     public String addNode(K key, D data) {
         if (searchNode2(key)!=null) {
             return "The node already exist in the graph";
@@ -31,7 +30,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         adjacencyMatrix.add(newRow);
         return "Node added correctly.";
     }
-    @Override
     public String addEdge(K keyInitial, K keyTerminal, Double weight) {
         int initialIndex = nodes.indexOf(searchNode2(keyInitial));
         int terminalIndex = nodes.indexOf(searchNode2(keyTerminal));
@@ -46,7 +44,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return "That edge already exist in the graph";
     }
-    @Override
     public String deleteNode(K key) {
         Node2<K,D> node=searchNode2(key);
         if (node==null) {
@@ -61,7 +58,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         deleteReferences(node.getKey());
         return "The node were deleted successfully.";
     }
-    @Override
     public String deleteEdge(K keyInitial, K keyTerminal) {
         int initialIndex = nodes.indexOf(searchNode2(keyInitial));
         int terminalIndex = nodes.indexOf(searchNode2(keyTerminal));
@@ -76,7 +72,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return "The destination or source node does not exist or does not have a connecting edge";
     }
-    @Override
     public Node2<K, D> searchNode2(K key) {
         for(Node2<K,D> n: nodes){
             if(n.getKey()==key){
@@ -85,7 +80,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return null;
     }
-    @Override
     public String consultNode(K key) {
         Node2<K,D> node = searchNode2(key);
         if(node!=null){
@@ -94,7 +88,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         return "Node not found";
     }
 
-    @Override
     public String consultEdge(K keyInitial, K keyTerminal) {
         Node2<K,D> initial = searchNode2(keyInitial);
         Node2<K,D> terminal = searchNode2(keyTerminal);
@@ -108,7 +101,6 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return "Edge not found";
     }
-    @Override
     public String BFS(K key) {
         boolean[] visited=new boolean[nodes.size()];
         LinkedList<Node2<K,D>> queue=new LinkedList<>();
@@ -170,15 +162,10 @@ public class Graph<K, D> implements IGraph<K,D> {
         }
         return result.trim();
     }
-    @Override
     public boolean isStronglyConnected() {
         return false;
     }
 
-    @Override
-    public Node<K, D> searchNode(K key) {
-        return null;
-    }
     /*
     public void recorrerVerticeBfs(){
         boolean[] visitado=new boolean[vertices.size()];

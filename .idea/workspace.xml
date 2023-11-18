@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +157,7 @@
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
       <workItem from="1700255101087" duration="8095000" />
-      <workItem from="1700320316539" duration="4597000" />
+      <workItem from="1700320316539" duration="5619000" />
     </task>
     <servers />
   </component>

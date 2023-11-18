@@ -4,7 +4,7 @@ import structure.Graph1.Graph;
 import java.util.Arrays;
 
 public class GraphTest1 extends TestCase {
-    private Graph<Integer, Integer> graph;
+    private Graph<Integer> graph;
 
     public void setUpStage1() {
         graph = new Graph<>();
@@ -12,18 +12,18 @@ public class GraphTest1 extends TestCase {
 
     public void setUpStage2() {
         graph = new Graph<>();
-        graph.addNode(1, 1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
     }
 
     public void setUpStage3() {
         graph = new Graph<>();
-        graph.addNode(1, 1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
-        graph.addNode(4, 4);
-        graph.addNode(5, 5);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
+        graph.addNode(4);
+        graph.addNode(5);
         graph.addEdge(1, 2, 5.0);
         graph.addEdge(2, 3, 2.0);
         graph.addEdge(3, 4, 5.0);
@@ -33,14 +33,14 @@ public class GraphTest1 extends TestCase {
 
     public void setUpStage4() {
         graph = new Graph<>();
-        graph.addNode(1, 1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
-        graph.addNode(4, 4);
-        graph.addNode(5, 5);
-        graph.addNode(6, 5);
-        graph.addNode(7, 5);
-        graph.addNode(8, 5);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
+        graph.addNode(4);
+        graph.addNode(5);
+        graph.addNode(6);
+        graph.addNode(7);
+        graph.addNode(8);
         graph.addEdge(1, 2, 5.0);
         graph.addEdge(1, 3, 2.0);
         graph.addEdge(2, 4, 5.0);
@@ -53,15 +53,15 @@ public class GraphTest1 extends TestCase {
 
     public void setupStage5(){
         graph = new Graph<>();
-        graph.addNode(0, 0);
-        graph.addNode(1,1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
-        graph.addNode(4, 4);
-        graph.addNode(5, 5);
-        graph.addNode(6, 5);
-        graph.addNode(7, 5);
-        graph.addNode(8, 5);
+        graph.addNode(0);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
+        graph.addNode(4);
+        graph.addNode(5);
+        graph.addNode(6);
+        graph.addNode(7);
+        graph.addNode(8);
         graph.addEdge(0, 1, 4.0);
         graph.addEdge(0, 7, 8.0);
         graph.addEdge(1, 2, 8.0);
@@ -80,10 +80,10 @@ public class GraphTest1 extends TestCase {
 
     public void setUpStage6(){
         graph = new Graph<>();
-        graph.addNode(0, 0);
-        graph.addNode(1,1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
+        graph.addNode(0);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
         graph.addEdge(0,1, 5.0);
         graph.addEdge(0,3, 10.0);
         graph.addEdge(1,2,3.0);
@@ -92,15 +92,15 @@ public class GraphTest1 extends TestCase {
 
     public void setUpStage7(){
         graph = new Graph<>();
-        graph.addNode(0, 0);
-        graph.addNode(1,1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
-        graph.addNode(4, 4);
-        graph.addNode(5, 5);
-        graph.addNode(6, 5);
-        graph.addNode(7, 5);
-        graph.addNode(8, 5);
+        graph.addNode(0);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
+        graph.addNode(4);
+        graph.addNode(5);
+        graph.addNode(6);
+        graph.addNode(7);
+        graph.addNode(8);
         graph.addEdge(0, 1, 4.0);
         graph.addEdge(0, 7, 8.0);
         graph.addEdge(1, 2, 8.0);
@@ -119,11 +119,12 @@ public class GraphTest1 extends TestCase {
 
     public void setUpStage8(){
         graph = new Graph<>();
-        graph.addNode(0, 0);
-        graph.addNode(1,1);
-        graph.addNode(2, 2);
-        graph.addNode(3, 3);
-        graph.addNode(5, 5);
+        graph.addNode(0);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
+        graph.addNode(4);
+        graph.addNode(5);
         graph.addEdge(0, 1, 4.0);
         graph.addEdge(0, 2, 4.0);
         graph.addEdge(1, 2, 2.0);
@@ -143,19 +144,19 @@ public class GraphTest1 extends TestCase {
 
     public void testAddNode1() {
         setUpStage1();
-        String result = graph.addNode(1, 1);
+        String result = graph.addNode(1);
         assertEquals("Node added successfully.", result);
     }
 
     public void testAddNode2() {
         setUpStage2();
-        String result = graph.addNode(2, 2);
+        String result = graph.addNode(2);
         assertEquals("The addition of this node is not possible as there is one with the same key.", result);
     }
 
     public void testAddNode3() {
         setUpStage3();
-        String result = graph.addNode(6, 4);
+        String result = graph.addNode(6);
         assertEquals("Node added successfully.", result);
     }
 
