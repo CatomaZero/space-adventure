@@ -348,6 +348,45 @@ public class Graph<K, D> implements IGraph<K, D> {
         return stringBuilder.toString().trim();
     }
 
+    public ArrayList<Edge<K, D>> prim() {
+        if (adjacency.isEmpty()) {
+            return null;
+        }
+
+        ArrayList<Edge<K, D>> minimumSpanningTree = new ArrayList<>();
+        PriorityQueue<Edge<K, D>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
+        boolean[] visitedNodes = new boolean[adjacency.size()];
+
+        Node<K, D> startNode = adjacency.get(0);
+        visitedNodes[adjacency.indexOf(startNode)] = true;
+
+        for (Edge<K, D> edge : startNode.getEdges()) {
+            priorityQueue.add(edge);
+        }
+
+        while (!priorityQueue.isEmpty()) {
+            Edge<K, D> minEdge = priorityQueue.poll();
+            Node<K, D> nextNode = (visitedNodes[adjacency.indexOf(minEdge.getInitial())])
+                    ? minEdge.getTerminal()
+                    : minEdge.getInitial();
+
+            int nextNodeIndex = adjacency.indexOf(nextNode);
+
+            if (!visitedNodes[nextNodeIndex]) {
+                visitedNodes[nextNodeIndex] = true;
+                minimumSpanningTree.add(minEdge);
+
+                for (Edge<K, D> edge : nextNode.getEdges()) {
+                    int edgeIndex = adjacency.indexOf(edge.getTerminal());
+                    if (!visitedNodes[edgeIndex]) {
+                        priorityQueue.add(edge);
+                    }
+                }
+            }
+        }
+
+        return minimumSpanningTree;
+    }
 
     @Override
     public boolean isStronglyConnected() {

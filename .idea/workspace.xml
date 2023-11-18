@@ -7,11 +7,7 @@
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java\structure" />
@@ -157,7 +153,7 @@
       <workItem from="1699154816842" duration="16631000" />
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
-      <workItem from="1700255101087" duration="3693000" />
+      <workItem from="1700255101087" duration="8063000" />
     </task>
     <servers />
   </component>

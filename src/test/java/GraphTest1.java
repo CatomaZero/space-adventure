@@ -90,6 +90,32 @@ public class GraphTest1 extends TestCase {
         graph.addEdge(2, 3, 1.0);
     }
 
+    public void setUpStage7(){
+        graph.addNode(0, 0);
+        graph.addNode(1,1);
+        graph.addNode(2, 2);
+        graph.addNode(3, 3);
+        graph.addNode(4, 4);
+        graph.addNode(5, 5);
+        graph.addNode(6, 5);
+        graph.addNode(7, 5);
+        graph.addNode(8, 5);
+        graph.addEdge(0, 1, 4.0);
+        graph.addEdge(0, 7, 8.0);
+        graph.addEdge(1, 2, 8.0);
+        graph.addEdge(1, 7, 11.0);
+        graph.addEdge(2, 3, 7.0);
+        graph.addEdge(2, 8, 2.0);
+        graph.addEdge(2, 5, 4.0);
+        graph.addEdge(3, 4, 9.0);
+        graph.addEdge(3, 5, 14.0);
+        graph.addEdge(4, 5, 10.0);
+        graph.addEdge(5, 6, 2.0);
+        graph.addEdge(6, 7, 1.0);
+        graph.addEdge(6, 8, 6.0);
+        graph.addEdge(7, 8, 7.0);
+    }
+
     public void testAddNode1() {
         setUpStage1();
         String result = graph.addNode(1, 1);
