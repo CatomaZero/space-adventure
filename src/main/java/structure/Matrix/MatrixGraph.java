@@ -164,7 +164,7 @@ public class MatrixGraph<K> implements IGraph<K> {
         Node<K> startNode = findNode(key);
 
         if (startNode != null) {
-            StringBuilder result = new StringBuilder("BFS Traversal: ");
+            StringBuilder result = new StringBuilder();
             boolean[] visited = new boolean[nodes.size()];
             Queue<Node<K>> queue = new LinkedList<>();
             queue.add(startNode);
@@ -182,7 +182,7 @@ public class MatrixGraph<K> implements IGraph<K> {
                 }
             }
 
-            return result.toString();
+            return result.toString().trim();
         } else {
             return "Node not found.";
         }

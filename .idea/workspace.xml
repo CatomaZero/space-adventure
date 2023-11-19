@@ -5,71 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Spacecraft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Items.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Station.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HowToPlayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/how-to-play.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/GameController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Enemy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Spacecraft.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Enviroment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Items.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Map.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Planet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Station.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/List/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/Edge.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph$DisjointSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/HelloApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/HomeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/HowToPlayController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/PlayController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/how-to-play.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ui/play.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Node2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Node2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/List/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/structure/IGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/IGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ListGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ListGraphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MatrixGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MatrixGraphTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +98,47 @@
       <recent name="structure.Matrix" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ListGraphTest.testKruskal">
+  <component name="RunManager">
+    <configuration name="ListGraphTest.testBFS1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testBFS1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListGraphTest.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testBFS2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListGraphTest.testBFS3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testBFS3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListGraphTest.testDijkstra3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testDijkstra3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ListGraphTest.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
@@ -167,53 +149,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListGraphTest.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
-      <option name="METHOD_NAME" value="testPrim" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixGraphTest.testFloydWarshall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
-      <option name="METHOD_NAME" value="testFloydWarshall" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixGraphTest.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
-      <option name="METHOD_NAME" value="testKruskal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixGraphTest.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
-      <option name="METHOD_NAME" value="testPrim" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ListGraphTest.testDijkstra3" />
+        <item itemvalue="JUnit.ListGraphTest.testBFS2" />
+        <item itemvalue="JUnit.ListGraphTest.testBFS3" />
+        <item itemvalue="JUnit.ListGraphTest.testBFS1" />
         <item itemvalue="JUnit.ListGraphTest.testKruskal" />
-        <item itemvalue="JUnit.MatrixGraphTest.testKruskal" />
-        <item itemvalue="JUnit.MatrixGraphTest.testPrim" />
-        <item itemvalue="JUnit.ListGraphTest.testPrim" />
-        <item itemvalue="JUnit.MatrixGraphTest.testFloydWarshall" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +175,7 @@
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
       <workItem from="1700255101087" duration="8095000" />
-      <workItem from="1700320316539" duration="28096000" />
+      <workItem from="1700320316539" duration="33051000" />
     </task>
     <servers />
   </component>

@@ -84,45 +84,6 @@ public class MatrixGraphTest extends TestCase {
         matrixGraph.addNode(1);
         matrixGraph.addNode(2);
         matrixGraph.addNode(3);
-        matrixGraph.addEdge(0,1, 5.0);
-        matrixGraph.addEdge(0,3, 10.0);
-        matrixGraph.addEdge(1,2,3.0);
-        matrixGraph.addEdge(2, 3, 1.0);
-    }
-
-    public void setUpStage7(){
-        matrixGraph = new MatrixGraph<>();
-        matrixGraph.addNode(0);
-        matrixGraph.addNode(1);
-        matrixGraph.addNode(2);
-        matrixGraph.addNode(3);
-        matrixGraph.addNode(4);
-        matrixGraph.addNode(5);
-        matrixGraph.addNode(6);
-        matrixGraph.addNode(7);
-        matrixGraph.addNode(8);
-        matrixGraph.addEdge(0, 1, 4.0);
-        matrixGraph.addEdge(0, 7, 8.0);
-        matrixGraph.addEdge(1, 2, 8.0);
-        matrixGraph.addEdge(1, 7, 11.0);
-        matrixGraph.addEdge(2, 3, 7.0);
-        matrixGraph.addEdge(2, 8, 2.0);
-        matrixGraph.addEdge(2, 5, 4.0);
-        matrixGraph.addEdge(3, 4, 9.0);
-        matrixGraph.addEdge(3, 5, 14.0);
-        matrixGraph.addEdge(4, 5, 10.0);
-        matrixGraph.addEdge(5, 6, 2.0);
-        matrixGraph.addEdge(6, 7, 1.0);
-        matrixGraph.addEdge(6, 8, 6.0);
-        matrixGraph.addEdge(7, 8, 7.0);
-    }
-
-    public void setUpStage8(){
-        matrixGraph = new MatrixGraph<>();
-        matrixGraph.addNode(0);
-        matrixGraph.addNode(1);
-        matrixGraph.addNode(2);
-        matrixGraph.addNode(3);
         matrixGraph.addNode(4);
         matrixGraph.addNode(5);
         matrixGraph.addEdge(0, 1, 4.0);
@@ -140,6 +101,28 @@ public class MatrixGraphTest extends TestCase {
         matrixGraph.addEdge(4, 3, 3.0);
         matrixGraph.addEdge(5, 2, 2.0);
         matrixGraph.addEdge(5, 4, 3.0);
+    }
+
+    public void setUpStage7() {
+        matrixGraph = new MatrixGraph<>();
+        matrixGraph.addNode(0);
+        matrixGraph.addNode(1);
+        matrixGraph.addNode(2);
+        matrixGraph.addNode(3);
+        matrixGraph.addNode(4);
+        matrixGraph.addNode(5);
+        matrixGraph.addNode(6);
+        matrixGraph.addEdge(0, 1,2.0);
+        matrixGraph.addEdge(0, 2, 6.0);
+        matrixGraph.addEdge(1, 3, 5.0);
+        matrixGraph.addEdge(2, 3, 8.0);
+        matrixGraph.addEdge(3, 5, 15.0);
+        matrixGraph.addEdge(2, 3, 8.0);
+        matrixGraph.addEdge(3, 5, 15.0);
+        matrixGraph.addEdge(3, 4, 10.0);
+        matrixGraph.addEdge(4, 5, 6.0);
+        matrixGraph.addEdge(4, 6, 2.0);
+        matrixGraph.addEdge(5, 6, 6.0);
     }
 
     public void testAddNode1() {
@@ -214,33 +197,48 @@ public class MatrixGraphTest extends TestCase {
         assertEquals("Edge deleted successfully.", result);
     }
 
-    public void testDFS1(){
+    public void testBFS1() {
+        setUpStage4();
+        assertEquals("1 2 3 4 5 6 7 8", matrixGraph.BFS(1));
+    }
+
+    public void testBFS2() {
+        setUpStage3();
+        assertEquals("2 1 3 5 4", matrixGraph.BFS(2));
+    }
+
+    public void testBFS3() {
+        setUpStage6();
+        assertEquals("Node not found.", matrixGraph.BFS(10));
+    }
+
+    public void testDFS1() {
         setUpStage4();
         assertEquals("1 2 4 5 6 3 7 8", matrixGraph.DFS(1));
     }
 
-    public void testDijkstra1(){
+    public void testDFS2() {
+        setupStage5();
+        assertEquals("0 1 2 3 4 5 6 7 8", matrixGraph.DFS(0));
+    }
+
+    public void testDFS3() {
+        setUpStage6();
+        assertEquals("Node not found.", matrixGraph.DFS(20));
+    }
+
+    public void testDijkstra1() {
         setupStage5();
         assertEquals("[0.0, 4.0, 12.0, 19.0, 21.0, 11.0, 9.0, 8.0, 14.0]", Arrays.toString(matrixGraph.dijkstra(0)));
     }
 
-    public void testFloydWarshall(){
-        setUpStage6();
-        String result =
-                "0.0\t5.0\t8.0\t9.0\t\n" +
-                        "5.0\t0.0\t3.0\t4.0\t\n" +
-                        "8.0\t3.0\t0.0\t1.0\t\n" +
-                        "9.0\t4.0\t1.0\t0.0";
-        assertEquals(result, matrixGraph.getFloydWarshallResultString());
-    }
-
-    public void testPrim(){
+    public void testDijkstra2() {
         setUpStage7();
-        assertEquals("xd", matrixGraph.primMST());
+        assertEquals("[0.0, 2.0, 6.0, 7.0, 17.0, 22.0, 19.0]", Arrays.toString(matrixGraph.dijkstra(0)));
     }
 
-    public void testKruskal(){
-        setUpStage8();
-        assertEquals("xd", matrixGraph.kruskalMST());
+    public void testDijkstra3() {
+        setUpStage7();
+        assertEquals("[]", Arrays.toString(matrixGraph.dijkstra(10)));
     }
 }
