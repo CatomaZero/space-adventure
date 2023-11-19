@@ -1,4 +1,4 @@
-package structure.Graph1;
+package structure.List;
 
 import java.util.ArrayList;
 public class Node<K> {
@@ -29,14 +29,5 @@ public class Node<K> {
             }
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        String result = "Key: " +  key + "\nEdges: ";
-        for (Edge<K> e: edges ) {
-            result += "\n     " + e.toString();
-        }
-        return result;
     }
 }

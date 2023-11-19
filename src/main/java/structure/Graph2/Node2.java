@@ -1,8 +1,5 @@
 package structure.Graph2;
 
-import structure.Graph1.Edge;
-import structure.Graph1.Node;
-
 import java.util.ArrayList;
 
 public class Node2<K,D>{

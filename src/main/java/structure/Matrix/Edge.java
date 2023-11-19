@@ -1,4 +1,4 @@
-package structure.Graph1;
+package structure.Matrix;
 
 public class Edge<K> {
     private Double weight;

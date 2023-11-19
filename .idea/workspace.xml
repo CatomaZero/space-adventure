@@ -5,12 +5,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/entities/Spacecraft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Items.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/Station.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HowToPlayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/how-to-play.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/GameController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Enemy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/entities/Spacecraft.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Enviroment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Items.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Map.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Planet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/model/map/Station.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/List/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/Edge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph$DisjointSet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/HelloApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/HomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/HowToPlayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/PlayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/how-to-play.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ui/play.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph1/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GraphTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Graph2/Node2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Graph2/Node2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GraphTest2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/List/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph1/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Graph2/Node2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/IGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/IGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GraphTest2.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +79,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
@@ -44,6 +107,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -52,27 +118,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/java/structure/Matrix",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java\structure\Matrix" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java\structure" />
       <recent name="C:\Users\tomot\OneDrive - Universidad Icesi (@icesi.edu.co)\Escritorio\ProyectosAPO2\space-adventure\src\main\java\structure\Graph2" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure" />
@@ -81,63 +148,72 @@
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\test\java" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="ui" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="structure.Matrix" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest1.testKruskal">
-    <configuration name="GraphTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ListGraphTest.testKruskal">
+    <configuration name="ListGraphTest.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest1.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
-      <option name="METHOD_NAME" value="testBFS2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest1.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
       <option name="METHOD_NAME" value="testKruskal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest1.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ListGraphTest.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest1" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
       <option name="METHOD_NAME" value="testPrim" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatrixGraphTest.testFloydWarshall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphTest2" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
+      <option name="METHOD_NAME" value="testFloydWarshall" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatrixGraphTest.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
+      <option name="METHOD_NAME" value="testKruskal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatrixGraphTest.testPrim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatrixGraphTest" />
+      <option name="METHOD_NAME" value="testPrim" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GraphTest1.testKruskal" />
-        <item itemvalue="JUnit.GraphTest1.testPrim" />
-        <item itemvalue="JUnit.GraphTest1" />
-        <item itemvalue="JUnit.GraphTest2" />
-        <item itemvalue="JUnit.GraphTest1.testBFS2" />
+        <item itemvalue="JUnit.ListGraphTest.testKruskal" />
+        <item itemvalue="JUnit.MatrixGraphTest.testKruskal" />
+        <item itemvalue="JUnit.MatrixGraphTest.testPrim" />
+        <item itemvalue="JUnit.ListGraphTest.testPrim" />
+        <item itemvalue="JUnit.MatrixGraphTest.testFloydWarshall" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +233,7 @@
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
       <workItem from="1700255101087" duration="8095000" />
-      <workItem from="1700320316539" duration="5619000" />
+      <workItem from="1700320316539" duration="28096000" />
     </task>
     <servers />
   </component>

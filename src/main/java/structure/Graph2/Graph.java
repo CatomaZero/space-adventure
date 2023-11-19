@@ -1,8 +1,5 @@
 package structure.Graph2;
 
-import structure.Graph1.Node;
-import structure.IGraph;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 

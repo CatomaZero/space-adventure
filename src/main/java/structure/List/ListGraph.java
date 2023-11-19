@@ -1,17 +1,14 @@
-package structure.Graph1;
+package structure.List;
 
-import structure.Graph2.Node2;
 import structure.IGraph;
 
 import java.util.*;
 
-public class Graph<K> {
+public class ListGraph<K> implements IGraph<K> {
     private ArrayList<Node<K>> adjacency;
-    // private ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
-    public Graph(){
+    public ListGraph(){
         this.adjacency = new ArrayList<>();
-        // this.adjacencyMatrix = new ArrayList<>();
     }
 
     public String addNode(K key){
@@ -19,22 +16,8 @@ public class Graph<K> {
             return "The addition of this node is not possible as there is one with the same key.";
         }
 
-        // List
         Node<K> v = new Node<>(key);
         adjacency.add(v);
-
-        /*
-        // Matrix
-        ArrayList<Integer> row = new ArrayList<>();
-        row.add(0);
-        if(!adjacencyMatrix.isEmpty()){
-            for(ArrayList<Integer> current : adjacencyMatrix){
-                current.add(0);
-                row.add(0);
-            }
-        }
-        adjacencyMatrix.add(row);
-        */
 
         return "Node added successfully.";
     }
@@ -47,24 +30,13 @@ public class Graph<K> {
         Node<K> initial = searchNode(keyInitial);
         Node<K> terminal = searchNode(keyTerminal);
 
-        if(initial == null){
-            return "Initial node not found";
-        } else if (terminal == null){
-            return "Terminal node not found";
+        if(initial == null || terminal == null){
+            return "One or both nodes not found.";
         }
 
-        // List
         Edge<K> edge = new Edge<>(weight, initial, terminal);
         initial.addEdge(edge);
         terminal.addEdge(edge);
-
-        /*
-        // Matrix
-        int indexInitial = adjacency.indexOf(initial);
-        int indexTerminal = adjacency.lastIndexOf(terminal);
-        adjacencyMatrix.get(indexInitial).set(indexTerminal, 1);
-        adjacencyMatrix.get(indexTerminal).set(indexInitial, 1);
-        */
 
         return "Edge added successfully.";
     }
@@ -75,39 +47,18 @@ public class Graph<K> {
             return "Node not found";
         }
 
-        // List
-        // Obtener los aristas del nodo que se desea eliminar
         ArrayList<Edge<K>> edges = node.getEdges();
-        // Recorremos la lista de aristas
         for (Edge<K> e : edges) {
-            // En cada arista, obtenemos su nodo terminal o inicial
             Node<K> currentV = node==e.getTerminal()?e.getInitial():e.getTerminal();
-            // Obtenemos los aristas de ese nodo
             ArrayList<Edge<K>> edg = currentV.getEdges();
-            // Lo recorremos para saber cual es que esta conectado al nodo que deseamos eliminar
             boolean flag = true;
             for (int i = 0; flag && i < edg.size(); i++) {
-                // Si esta conectado lo eliminamos y rompemos el ciclo
                 if(edg.get(i).getTerminal() == node || edg.get(i).getInitial() == node){
                     edg.remove(edg.get(i));
                     flag = false;
                 }
             }
         }
-
-        /*
-
-        // Matrix
-        int index = adjacency.indexOf(node);
-        System.out.println(index);
-        for (ArrayList<Integer> i: adjacencyMatrix) {
-            i.remove(index);
-        }
-        adjacencyMatrix.remove(index);
-        adjacency.remove(node);
-
-
-         */
 
         return "Node deleted successfully.";
     }
@@ -117,7 +68,7 @@ public class Graph<K> {
         Node<K> terminal = searchNode(keyTerminal);
 
         if (initial == null || terminal == null) {
-            return "Node not found";
+            return "One or both nodes not found.";
         }
 
         if (deleteEdgeAux(initial, terminal) && deleteEdgeAux(terminal, initial)) {
@@ -140,10 +91,12 @@ public class Graph<K> {
     }
 
     public String consult(){
-        String result = "";
+        String result = "Nodes: ";
         for (Node<K> node : adjacency) {
-            result += consultNode(node.getKey()) + "\n";
+            result += node.getKey() + " ";
         }
+        result.trim();
+
         return result.trim();
     }
 
@@ -424,16 +377,6 @@ public class Graph<K> {
         parent.put(rootX, rootY);
     }
 
-    public boolean isStronglyConnected() {
-        for(Node<K> v : adjacency){
-            String[] keys = BFS(v.getKey()).split(" ");
-            if(keys.length < adjacency.size()){
-                return false;
-            }
-        }
-        return true;
-    }
-
     public Node<K> searchNode(K key){
         for (Node<K> node : adjacency) {
             if(node.getKey().equals(key)){
@@ -441,18 +384,5 @@ public class Graph<K> {
             }
         }
         return null;
-    }
-
-    //  Temporal method
-    public void printAdjacencyMatrix(){
-        /*
-        for (ArrayList<Integer> matrix : adjacencyMatrix) {
-            for (Integer integer : matrix) {
-                System.out.print(integer);
-            }
-            System.out.println();
-        }
-
-         */
     }
 }
