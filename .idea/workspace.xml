@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/ListGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ListGraphTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MatrixGraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MatrixGraphTest.class" afterDir="false" />
@@ -99,31 +101,11 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="ListGraphTest.testBFS1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
-      <option name="METHOD_NAME" value="testBFS1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ListGraphTest.testBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
       <option name="METHOD_NAME" value="testBFS2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ListGraphTest.testBFS3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="space-adventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
-      <option name="METHOD_NAME" value="testBFS3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,11 +121,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListGraphTest.testKruskal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ListGraphTest.testFloydWarshall1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-adventure" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
-      <option name="METHOD_NAME" value="testKruskal" />
+      <option name="METHOD_NAME" value="testFloydWarshall1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListGraphTest.testFloydWarshall2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testFloydWarshall2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListGraphTest.testFloydWarshall3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-adventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListGraphTest" />
+      <option name="METHOD_NAME" value="testFloydWarshall3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ListGraphTest.testFloydWarshall3" />
+        <item itemvalue="JUnit.ListGraphTest.testFloydWarshall1" />
+        <item itemvalue="JUnit.ListGraphTest.testFloydWarshall2" />
         <item itemvalue="JUnit.ListGraphTest.testDijkstra3" />
         <item itemvalue="JUnit.ListGraphTest.testBFS2" />
-        <item itemvalue="JUnit.ListGraphTest.testBFS3" />
-        <item itemvalue="JUnit.ListGraphTest.testBFS1" />
-        <item itemvalue="JUnit.ListGraphTest.testKruskal" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +177,7 @@
       <workItem from="1700161879546" duration="2256000" />
       <workItem from="1700172455603" duration="10008000" />
       <workItem from="1700255101087" duration="8095000" />
-      <workItem from="1700320316539" duration="33051000" />
+      <workItem from="1700320316539" duration="43780000" />
     </task>
     <servers />
   </component>

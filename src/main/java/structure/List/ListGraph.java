@@ -4,7 +4,7 @@ import structure.IGraph;
 
 import java.util.*;
 
-public class ListGraph<K> implements IGraph<K> {
+public class ListGraph<K> {
     private ArrayList<Node<K>> adjacency;
 
     public ListGraph(){
@@ -22,15 +22,15 @@ public class ListGraph<K> implements IGraph<K> {
         return "Node added successfully.";
     }
 
-    public String addEdge(K keyInitial, K keyTerminal, Double weight){
-        if(adjacency.isEmpty()){
+    public String addEdge(K keyInitial, K keyTerminal, Double weight) {
+        if (adjacency.isEmpty()) {
             return "Empty graph";
         }
 
         Node<K> initial = searchNode(keyInitial);
         Node<K> terminal = searchNode(keyTerminal);
 
-        if(initial == null || terminal == null){
+        if (initial == null || terminal == null) {
             return "One or both nodes not found.";
         }
 
@@ -40,6 +40,7 @@ public class ListGraph<K> implements IGraph<K> {
 
         return "Edge added successfully.";
     }
+
 
     public String deleteNode(K key){
         Node<K> node = searchNode(key);
@@ -105,23 +106,19 @@ public class ListGraph<K> implements IGraph<K> {
         return node!=null?node.toString():"Node not found";
     }
 
-    public String consultEdge(K keyInitial, K keyTerminal){
+    public Edge<K> consultEdge(K keyInitial, K keyTerminal){
         Node<K> initial = searchNode(keyInitial);
         Node<K> terminal = searchNode(keyTerminal);
-
-        if(initial == null || terminal == null){
-            return "Node not found";
-        }
 
         for(Node<K> node : adjacency){
             for(Edge<K> edge : node.getEdges()){
                 if((edge.getInitial() == initial && edge.getTerminal() == terminal) || (edge.getInitial() == terminal && edge.getTerminal() == initial)){
-                    return edge.toString();
+                    return edge;
                 }
             }
         }
 
-        return "Edge not found";
+        return null;
     }
 
     public String BFS(K key){
@@ -244,29 +241,22 @@ public class ListGraph<K> implements IGraph<K> {
 
         for (int i = 0; i < numNodes; i++) {
             for (int j = 0; j < numNodes; j++) {
-                dist[i][j] = Double.MAX_VALUE;
-            }
-        }
-
-        for (int i = 0; i < numNodes; i++) {
-            Node<K> node = adjacency.get(i);
-            dist[i][i] = 0;
-
-            for (Edge<K> edge : node.getEdges()) {
-                Node<K> neighbor = (node == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
-                int j = adjacency.indexOf(neighbor);
-                dist[i][j] = edge.getWeight();
+                Edge<K> edge = consultEdge(adjacency.get(i).getKey(), adjacency.get(j).getKey());
+                if (i == j) {
+                    dist[i][j] = 0;
+                } else if (edge != null) {
+                    dist[i][j] = edge.getWeight();
+                } else {
+                    dist[i][j] = Double.MAX_VALUE;
+                }
             }
         }
 
         for (int k = 0; k < numNodes; k++) {
             for (int i = 0; i < numNodes; i++) {
                 for (int j = 0; j < numNodes; j++) {
-                    if (dist[i][k] != Double.MAX_VALUE && dist[k][j] != Double.MAX_VALUE) {
-                        double temp = dist[i][k] + dist[k][j];
-                        if (temp < dist[i][j]) {
-                            dist[i][j] = temp;
-                        }
+                    if (dist[i][j] > dist[i][k] + dist[k][j]) {
+                        dist[i][j] = dist[i][k] + dist[k][j];
                     }
                 }
             }
@@ -275,15 +265,16 @@ public class ListGraph<K> implements IGraph<K> {
         return dist;
     }
 
+
     public String getFloydWarshallResultString() {
         double[][] result = floydWarshall();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[i].length; j++) {
                 if (result[i][j] == Double.MAX_VALUE) {
-                    stringBuilder.append("INF\t");
+                    stringBuilder.append("INF  ");
                 } else {
-                    stringBuilder.append(result[i][j]).append("\t");
+                    stringBuilder.append(result[i][j]).append("  ");
                 }
             }
             stringBuilder.append("\n");

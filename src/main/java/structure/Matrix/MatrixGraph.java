@@ -302,9 +302,9 @@ public class MatrixGraph<K> implements IGraph<K> {
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[i].length; j++) {
                 if (result[i][j] == Double.MAX_VALUE) {
-                    stringBuilder.append("INF\t");
+                    stringBuilder.append("INF  ");
                 } else {
-                    stringBuilder.append(result[i][j]).append("\t");
+                    stringBuilder.append(result[i][j]).append("  ");
                 }
             }
             stringBuilder.append("\n");
@@ -356,7 +356,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     public String kruskalMST() {
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
 
-        ArrayList<Edge<K>> edges = getAllEdges();
+        // ArrayList<Edge<K>> edges = getAllEdges();
         edges.sort(Comparator.comparingDouble(Edge::getWeight));
 
         Map<K, K> parent = new HashMap<>();
