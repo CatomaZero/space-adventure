@@ -376,4 +376,26 @@ public class ListGraph<K> {
         }
         return null;
     }
+
+    public boolean hasEdge(K keyInitial, K keyTerminal){
+        Node<K> initial = searchNode(keyInitial);
+        Node<K> terminal = searchNode(keyTerminal);
+
+        if(initial == null || terminal == null){
+            return false;
+        }
+
+        for (Node<K> node : adjacency) {
+            for (Edge<K> edge : node.getEdges()){
+                if((edge.getInitial() == initial && edge.getTerminal() == terminal) || (edge.getInitial() == terminal && edge.getTerminal() == initial)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public int size(){
+        return adjacency.size();
+    }
 }
