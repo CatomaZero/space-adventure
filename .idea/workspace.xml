@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Spacecraft.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entities/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entities/Spacecraft.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Enviroment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Enviroment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Planet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Planet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Station.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Station.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/PlayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/PlayController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

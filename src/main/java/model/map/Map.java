@@ -1,5 +1,6 @@
 package model.map;
 
+import model.entities.Player;
 import structure.List.Edge;
 import structure.List.ListGraph;
 
@@ -35,7 +36,12 @@ public class Map {
             } while (!isValidPosition(x, y, enviroments, minDistance));
 
             map.addNode(nodeId);
-            enviroments.add(new Planet(nodeId, x, y));
+
+            if (nodeId % 5 ==0 ){
+                enviroments.add(new Station(nodeId, x, y));
+            } else {
+                enviroments.add(new Planet(nodeId, x, y));
+            }
         }
 
         for (int i = 0; i < SIZE; i++) {
@@ -50,6 +56,21 @@ public class Map {
                 map.addEdge(i, targetNode, weight);
             }
         }
+
+        // Naranjita
+        int indexNarajita = 0;
+        do{
+            indexNarajita = random.nextInt(size());
+            enviroments.get(indexNarajita).setNaranjita(true);
+        } while (indexNarajita % 5 == 0);
+
+        // Ramiel
+        int indexRamiel = 0;
+        do{
+            indexRamiel = random.nextInt(size());
+        } while (indexRamiel % 5 == 0 || indexRamiel == indexNarajita);
+
+        Player.getInstance().setCoordinates(enviroments.get(indexRamiel).getX(), enviroments.get(indexRamiel).getY());
     }
 
     private boolean isValidPosition(double x, double y, ArrayList<Enviroment> existingEnviroments, int minDistance) {

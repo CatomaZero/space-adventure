@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import model.entities.Player;
 import model.map.Enviroment;
 import model.map.Map;
 
@@ -36,7 +37,7 @@ public class PlayController implements Initializable {
             Enviroment sourceEnv = map.getEnviroments().get(i);
 
             for (Integer neighbor : map.getNeighbors(i)) {
-                if (i < neighbor) { // Dibujar solo una arista por par de nodos
+                if (i < neighbor) {
                     Enviroment targetEnv = map.getEnviroments().get(neighbor);
 
                     double sourceX = sourceEnv.getX();
@@ -53,15 +54,10 @@ public class PlayController implements Initializable {
         }
 
         for (Enviroment environment : map.getEnviroments()) {
-            double x = environment.getX();
-            double y = environment.getY();
-
-            gc.setFill(Color.RED);
-            gc.fillOval(x-10, y-10, 20, 20);
-
-            gc.setFill(Color.BLACK);
-            gc.fillText(environment.getName(), x, y - 5);
+            environment.drawEnviroment(gc);
         }
+
+        Player.getInstance().drawPlayer(gc);
     }
 
 
