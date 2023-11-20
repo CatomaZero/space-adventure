@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import model.entities.Player;
 import model.map.Enviroment;
@@ -27,6 +28,45 @@ public class PlayController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         map = new Map();
         drawGraph();
+
+        // Agregar un EventHandler para capturar clics del mouse en el mapCanvas
+        mapCanvas.setOnMouseClicked(this::handleMouseClick);
+    }
+
+    private void handleMouseClick(MouseEvent event) {
+        double mouseX = event.getX();
+        double mouseY = event.getY();
+
+        // Encontrar el nodo más cercano a las coordenadas del clic
+        int closestNode = findClosestNode(mouseX, mouseY);
+
+        // Mover al jugador a la posición del nodo más cercano
+        movePlayerToNode(closestNode);
+
+        // Volver a dibujar el gráfico
+        drawGraph();
+    }
+
+    private int findClosestNode(double mouseX, double mouseY) {
+        // Encontrar el nodo más cercano a las coordenadas del clic
+        int closestNode = -1;
+        double minDistance = Double.MAX_VALUE;
+
+        for (Enviroment environment : map.getEnviroments()) {
+            double distance = Math.sqrt(Math.pow(mouseX - environment.getX(), 2) + Math.pow(mouseY - environment.getY(), 2));
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestNode = environment.getKey();
+            }
+        }
+
+        return closestNode;
+    }
+
+    private void movePlayerToNode(int nodeId) {
+        // Mover al jugador a la posición del nodo
+        Enviroment node = map.getEnviroments().get(nodeId);
+        Player.getInstance().setCoordinates(node.getX(), node.getY());
     }
 
     private void drawGraph() {
@@ -59,7 +99,6 @@ public class PlayController implements Initializable {
 
         Player.getInstance().drawPlayer(gc);
     }
-
 
     private Color generateRandomColor() {
         Random random = new Random();
