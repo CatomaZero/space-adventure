@@ -155,7 +155,7 @@ public class ListGraph<K> {
         return result.trim();
     }
 
-    public String DFS(K key){
+    public String DFS(K key,K root){
         if(adjacency.isEmpty()){
             return "Empty graph";
         }
@@ -167,24 +167,27 @@ public class ListGraph<K> {
 
         boolean[] visited = new boolean[adjacency.size()];
 
-        return DFSAux(key, visited).trim();
+        return DFSAux(key,root,visited,3).trim();
     }
 
-    private String DFSAux(K key, boolean[] visited){
-        Node<K> current = searchNode(key);
-        int index = adjacency.indexOf(current);
+    private String DFSAux(K key,K root,boolean[] visited,int times) {
+        String result = "";
+        Node<K> current = searchNode(root);
+        if (times>0&&current.getKey()!=key) {
+            int index = adjacency.indexOf(current);
 
-        visited[index] = true;
-        String result = current.getKey() + " ";
+            visited[index] = true;
+            result = current.getKey() + " ";
 
-        for(Edge<K> edge : current.getEdges()){
-            Node<K> currentV = current==edge.getTerminal()?edge.getInitial():edge.getTerminal();
-            // Node<K, D> currentV = edge.getTerminal();
-            if(!visited[adjacency.indexOf(currentV)]){
-                result += DFSAux(currentV.getKey(), visited);
+            for (Edge<K> edge : current.getEdges()) {
+                Node<K> currentV = current == edge.getTerminal() ? edge.getInitial() : edge.getTerminal();
+                // Node<K, D> currentV = edge.getTerminal();
+                if (!visited[adjacency.indexOf(currentV)]) {
+                    result += DFSAux(key, currentV.getKey(), visited, times - 1);
+                }
             }
+            return result;
         }
-
         return result;
     }
 

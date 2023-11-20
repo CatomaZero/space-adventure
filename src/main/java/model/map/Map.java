@@ -99,4 +99,8 @@ public class Map {
     public int size(){
         return map.size();
     }
+
+    public ListGraph<Integer> getMap() {
+        return map;
+    }
 }

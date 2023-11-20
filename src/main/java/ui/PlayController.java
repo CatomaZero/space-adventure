@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import model.GameController;
 import model.entities.Player;
 import model.map.Enviroment;
 import model.map.Map;
@@ -24,9 +25,12 @@ public class PlayController implements Initializable {
 
     private Map map;
 
+    private GameController controller;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         map = new Map();
+        controller=new GameController();
         drawGraph();
 
         // Agregar un EventHandler para capturar clics del mouse en el mapCanvas
@@ -39,6 +43,12 @@ public class PlayController implements Initializable {
 
         // Encontrar el nodo más cercano a las coordenadas del clic
         int closestNode = findClosestNode(mouseX, mouseY);
+
+        // Se busca donde está el jugador para poder hacer la busquedad
+        int playerPlace=findClosestNode(Player.getInstance().getX(),Player.getInstance().getY());
+
+        //Verificar si el planeta destino se encuentra conectado al planeta inicial en al menos 3 movimientos
+        System.out.println(verifyClosestNodeDFS(closestNode,playerPlace));
 
         // Mover al jugador a la posición del nodo más cercano
         movePlayerToNode(closestNode);
@@ -61,6 +71,10 @@ public class PlayController implements Initializable {
         }
 
         return closestNode;
+    }
+
+    public String verifyClosestNodeDFS(int closestNode, int playerNode){
+        return controller.verifyClosestNodeDFS(closestNode,playerNode,map);
     }
 
     private void movePlayerToNode(int nodeId) {
