@@ -52,8 +52,8 @@ public class PlayController implements Initializable {
 
         //Verificar que en el caso que sí haya conexiones entre planetas, como se deberá hacer el viaje
         doMove(way,closestNode);
-
         String[] ways=controller.getWay();
+        System.out.println("lugar de inicio: "+playerPlace+" lugar destino: "+closestNode);
 
         for (int i=0;i<ways.length;i++) {
             System.out.println(ways[i]);
