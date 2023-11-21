@@ -155,7 +155,7 @@ public class ListGraph<K> {
         return result.trim();
     }
 
-    public String DFS(K key,K root){
+    public String DFS(K key,K root,int times){
         if(adjacency.isEmpty()){
             return "Empty graph";
         }
@@ -167,13 +167,16 @@ public class ListGraph<K> {
 
         boolean[] visited = new boolean[adjacency.size()];
 
-        return DFSAux(key,root,visited,3).trim();
+        return DFSAux(key,root,visited,times).trim();
     }
 
     private String DFSAux(K key,K root,boolean[] visited,int times) {
         String result = "";
         Node<K> current = searchNode(root);
-        if (times>0&&current.getKey()!=key) {
+        if (current.getKey() == key) {
+            result += current.getKey() + " ";
+        }
+        if (times > 0 && current.getKey() != key) {
             int index = adjacency.indexOf(current);
 
             visited[index] = true;

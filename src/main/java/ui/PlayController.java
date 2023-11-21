@@ -47,11 +47,22 @@ public class PlayController implements Initializable {
         // Se busca donde está el jugador para poder hacer la busquedad
         int playerPlace=findClosestNode(Player.getInstance().getX(),Player.getInstance().getY());
 
-        //Verificar si el planeta destino se encuentra conectado al planeta inicial en al menos 3 movimientos
-        System.out.println(verifyClosestNodeDFS(closestNode,playerPlace));
+        //Marca el camino de conexión desde el planeta actual hasta 3 planetas de distancia para luego verificar si existe un camino para llegar al planeta destino
+        String way=verifyClosestNodeDFS(closestNode,playerPlace);
 
-        // Mover al jugador a la posición del nodo más cercano
-        movePlayerToNode(closestNode);
+        //Verificar que en el caso que sí haya conexiones entre planetas, como se deberá hacer el viaje
+        doMove(way,closestNode);
+
+        String[] ways=controller.getWay();
+
+        for (int i=0;i<ways.length;i++) {
+            System.out.println(ways[i]);
+        }
+
+        if(true) {
+            // Mover al jugador a la posición del nodo más cercano
+            movePlayerToNode(closestNode);
+        }
 
         // Volver a dibujar el gráfico
         drawGraph();
@@ -75,6 +86,10 @@ public class PlayController implements Initializable {
 
     public String verifyClosestNodeDFS(int closestNode, int playerNode){
         return controller.verifyClosestNodeDFS(closestNode,playerNode,map);
+    }
+
+    public void doMove(String way, int key){
+        controller.doMove(way,key,map.getMap());
     }
 
     private void movePlayerToNode(int nodeId) {

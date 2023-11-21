@@ -233,19 +233,21 @@ public class ListGraphTest extends TestCase {
 
     public void testDFS1() {
         setUpStage4();
-        assertEquals("1 2 4 5 6 3 7 8", matrixGraph.DFS(1));
+        assertEquals("1 2 4 5 3 6 7 8", matrixGraph.DFS(8,1,3));
     }
 
     public void testDFS2() {
         setupStage5();
-        assertEquals("0 1 2 3 4 5 6 7 8", matrixGraph.DFS(0));
+        assertEquals("0 1 2 5 7", matrixGraph.DFS(5,0,3));
     }
-
     public void testDFS3() {
         setUpStage6();
-        assertEquals("Node not found", matrixGraph.DFS(20));
+        assertEquals("Node not found", matrixGraph.DFS(20,0,3));
     }
-
+    public void testDFS4() {
+        setupStage5();
+        assertEquals("1 0 7 6 2 3 8 6 5 6", matrixGraph.DFS(6,1,3));
+    }
     public void testDijkstra1() {
         setupStage5();
         assertEquals("[0.0, 4.0, 12.0, 19.0, 21.0, 11.0, 9.0, 8.0, 14.0]", Arrays.toString(matrixGraph.dijkstra(0)));
