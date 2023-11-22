@@ -10,6 +10,7 @@ public class Player {
     private int coin;
     private double x;
     private double y;
+    private String[] travel;
 
     public Player() {
         this.life = 100;
@@ -40,8 +41,15 @@ public class Player {
     public double getX() {
         return x;
     }
-
     public double getY() {
         return y;
+    }
+
+    public void setTravel(String[] travel) {
+        this.travel = travel;
+    }
+
+    public String[] getTravel() {
+        return travel;
     }
 }

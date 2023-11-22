@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import model.GameController;
@@ -52,14 +53,10 @@ public class PlayController implements Initializable {
 
         //Verificar que en el caso que sí haya conexiones entre planetas, como se deberá hacer el viaje
         doMove(way,closestNode);
-        String[] ways=controller.getWay();
+
         System.out.println("lugar de inicio: "+playerPlace+" lugar destino: "+closestNode);
 
-        for (int i=0;i<ways.length;i++) {
-            System.out.println(ways[i]);
-        }
-
-        if(true) {
+        if(howToMove(closestNode,playerPlace)) {
             // Mover al jugador a la posición del nodo más cercano
             movePlayerToNode(closestNode);
         }
@@ -90,6 +87,49 @@ public class PlayController implements Initializable {
 
     public void doMove(String way, int key){
         controller.doMove(way,key,map.getMap());
+    }
+
+    public boolean howToMove(int key,int playerPlace){
+        String[] ways=controller.getWay();
+        int cont=0;
+
+        for (String way : ways) {
+            if (way != null) {
+                cont++;
+                System.out.println(way);
+            }
+        }
+        System.out.println(cont);
+        String[] movement=new String[cont];
+
+        int j=0;
+
+        for (String way : ways) {
+            if (way != null&&cont>0) {
+                movement[j]=way;
+                j++;
+                cont--;
+            }
+        }
+        if(j>0) {
+            if (movement[0] != null && movement[movement.length - 1] != null && Integer.parseInt(movement[0]) == playerPlace && Integer.parseInt(movement[movement.length - 1]) == key) {
+                Player.getInstance().setTravel(movement);
+                HelloApplication.showWindow("travel", null);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("You can not travel that far :b");
+                alert.setHeaderText("Nuh huh :b");
+                alert.setContentText("You can only select trips to planets that are no more than 3 planets away.");
+                alert.showAndWait();
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("You can not travel that far :b");
+            alert.setHeaderText("Nuh huh :b");
+            alert.setContentText("You can only select trips to planets that are no more than 3 planets away.");
+            alert.showAndWait();
+        }
+        return false;
     }
 
     private void movePlayerToNode(int nodeId) {
