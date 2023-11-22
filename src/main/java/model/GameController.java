@@ -12,8 +12,6 @@ public class GameController {
 
     private String[] way;
 
-    private String playerPLace;
-
     public GameController(){
     }
 
@@ -27,7 +25,6 @@ public class GameController {
         System.out.println("Impresión 1, camino: "+way);
         this.way=new String[20];
         String[] waySplit=way.split(" ");
-        this.playerPLace=waySplit[0];
         makeAWay(waySplit,key,map);
         verifyMovement(map);
     }
@@ -64,25 +61,27 @@ public class GameController {
         String movement2="";
 
         for(int i=0;i<way.length-1;i++){
+            System.out.println("Movement: "+way[i]);
             if(way[i]!=null&&movement1.isEmpty()){
                 movement1=way[i];
-            }else if(way[i+1]!=null&&movement2.isEmpty()){
-                movement2=way[i+1];
+            }else if(way[i]!=null&&movement2.isEmpty()){
+                movement2=way[i];
             }
+            System.out.println("Movement 1: "+movement1+" Movement 2:"+movement2);
             if(!movement1.isEmpty()&&!movement2.isEmpty()){
                 if (!map.hasEdge(Integer.parseInt(movement1), Integer.parseInt(movement2))) {
                     removeMovement(movement1);
                 }
-                movement1="";
+                movement1=movement2;
                 movement2="";
             }
         }
     }
 
     private void removeMovement(String movement){
-        for(String w:way){
-            if(w!=null&&w.equals(movement)){
-                w=null;
+        for (int i = 0; i < way.length; i++) {
+            if (way[i] != null && way[i].equals(movement)) {
+                way[i] = null;
                 break;
             }
         }
