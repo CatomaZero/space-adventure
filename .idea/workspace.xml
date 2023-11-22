@@ -7,6 +7,19 @@
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Enviroment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Planet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/43.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/44.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/25.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/30.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/47.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/35.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/40.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/planet/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/planet/41.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,12 +1,14 @@
 package model.map;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class Planet extends Enviroment {
 
-    public Planet(int key, int x, int y) {
-        super(key, x, y);
+    public Planet(int key, int x, int y, Image image) {
+        super(key, x, y, image);
     }
 
     @Override
@@ -16,13 +18,16 @@ public class Planet extends Enviroment {
 
     @Override
     public void drawEnviroment(GraphicsContext gc) {
-        int radius = 20;
-        gc.setFill(Color.LIGHTPINK);
-        gc.fillOval(getX()-radius, getY()-radius, 2*radius, 2*radius);
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setRadius(10);
+        dropShadow.setColor(javafx.scene.paint.Color.rgb(255, 255, 255, 0.5));
+        gc.setEffect(dropShadow);
+        gc.drawImage(getImage(), getX() - 20, getY() - 20, 40, 40);
+        gc.setEffect(null);
 
         if(isNaranjita()){
             int radiusN = 5;
-            gc.setFill(Color.PURPLE);
+            gc.setFill(Color.ORANGE);
             gc.fillOval(getX()-radiusN, getY()-radiusN, 2*radiusN, 2*radiusN);
         }
     }

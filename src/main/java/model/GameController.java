@@ -1,12 +1,8 @@
 package model;
 
 import model.map.Map;
-import structure.List.Edge;
 import structure.List.ListGraph;
 import structure.List.Node;
-
-import java.util.Arrays;
-
 
 public class GameController {
 
@@ -42,7 +38,7 @@ public class GameController {
         }
     }
 
-    //Metodo que verifique que el camino lleva al destino
+    //Metodo que verifique que el camino lleva al destinogit pu
     public boolean verifyWay(Node<Integer> currentNode, int key, int times,ListGraph<Integer> map,boolean[] visited){
         String[] mayWay=map.DFS(key,currentNode.getKey(),times).split(" ");
         for(String m:mayWay) {

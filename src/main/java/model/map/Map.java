@@ -1,5 +1,6 @@
 package model.map;
 
+import javafx.scene.image.Image;
 import model.entities.Player;
 import structure.List.Edge;
 import structure.List.ListGraph;
@@ -37,10 +38,13 @@ public class Map {
 
             map.addNode(nodeId);
 
-            if (nodeId % 5 ==0 ){
-                enviroments.add(new Station(nodeId, x, y));
+
+            if (nodeId % 5 == 0 ){
+                Image img = new Image(getClass().getResource(("/assets/station/0.png")).toExternalForm());
+                enviroments.add(new Station(nodeId, x, y, img));
             } else {
-                enviroments.add(new Planet(nodeId, x, y));
+                Image img = new Image(getClass().getResource(("/assets/planet/" + i + ".png")).toExternalForm());
+                enviroments.add(new Planet(nodeId, x, y, img));
             }
         }
 

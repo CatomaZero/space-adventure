@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import model.GameController;
@@ -28,14 +29,41 @@ public class PlayController implements Initializable {
 
     private GameController controller;
 
+    private Tooltip planetTooltip;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        GraphicsContext gc = mapCanvas.getGraphicsContext2D();
+
+        gc.setFill(Color.web("#001020"));
+        gc.fillRect(0, 0, mapCanvas.getWidth(), mapCanvas.getHeight());
+
         map = new Map();
-        controller=new GameController();
+        controller = new GameController();
         drawGraph();
 
-        // Agregar un EventHandler para capturar clics del mouse en el mapCanvas
+        planetTooltip = new Tooltip();
+
         mapCanvas.setOnMouseClicked(this::handleMouseClick);
+        mapCanvas.setOnMouseMoved(this::handleMouseMoved);
+    }
+
+    private void handleMouseMoved(MouseEvent event) {
+        double mouseX = event.getX();
+        double mouseY = event.getY();
+
+        int closestNode = findClosestNode(mouseX, mouseY);
+
+        if(closestNode != -1){
+            showPlanetInfoTooltip(map.getEnviroments().get(closestNode), event.getScreenX(), event.getScreenY());
+        } else {
+            planetTooltip.hide();
+        }
+    }
+
+    private void showPlanetInfoTooltip(Enviroment e, double screenX, double screenY) {
+        planetTooltip.setText(e.getName());
+        planetTooltip.show(mapCanvas, screenX, screenY);
     }
 
     private void handleMouseClick(MouseEvent event) {
@@ -66,13 +94,14 @@ public class PlayController implements Initializable {
     }
 
     private int findClosestNode(double mouseX, double mouseY) {
-        // Encontrar el nodo más cercano a las coordenadas del clic
         int closestNode = -1;
         double minDistance = Double.MAX_VALUE;
 
         for (Enviroment environment : map.getEnviroments()) {
             double distance = Math.sqrt(Math.pow(mouseX - environment.getX(), 2) + Math.pow(mouseY - environment.getY(), 2));
-            if (distance < minDistance) {
+
+            // Verifica si la distancia es menor o igual a 40
+            if (distance <= 40 && distance < minDistance) {
                 minDistance = distance;
                 closestNode = environment.getKey();
             }
@@ -140,7 +169,6 @@ public class PlayController implements Initializable {
 
     private void drawGraph() {
         GraphicsContext gc = mapCanvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, mapCanvas.getWidth(), mapCanvas.getHeight());
 
         for (int i = 0; i < map.size(); i++) {
             Enviroment sourceEnv = map.getEnviroments().get(i);
@@ -171,6 +199,12 @@ public class PlayController implements Initializable {
 
     private Color generateRandomColor() {
         Random random = new Random();
-        return Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+
+        // Ajustar los valores RGB para obtener colores más claros
+        int red = random.nextInt(128) + 128;     // Rango: 128-255
+        int green = random.nextInt(128) + 128;   // Rango: 128-255
+        int blue = random.nextInt(128) + 128;    // Rango: 128-255
+
+        return Color.rgb(red, green, blue);
     }
 }
