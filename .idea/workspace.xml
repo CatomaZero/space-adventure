@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +82,7 @@
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\resources\assets" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\test\java" />
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\java" />
     </key>
@@ -193,6 +193,7 @@
       <workItem from="1700568204092" duration="8822000" />
       <workItem from="1700580336687" duration="2182000" />
       <workItem from="1700604693970" duration="13882000" />
+      <workItem from="1700629192714" duration="1159000" />
     </task>
     <servers />
   </component>
