@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/background/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/play.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ListGraphTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,25 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/resources/assets/background",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/resources/assets/background&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\saral\OneDrive - Universidad Icesi (@icesi.edu.co)\Desktop\space-adventure\src\main\resources\assets\background" />
@@ -202,6 +203,7 @@
       <workItem from="1700653258581" duration="3189000" />
       <workItem from="1700656566035" duration="3381000" />
       <workItem from="1700844273187" duration="5341000" />
+      <workItem from="1700859885228" duration="6534000" />
     </task>
     <servers />
   </component>

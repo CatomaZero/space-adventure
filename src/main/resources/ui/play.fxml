@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.PlayController">
    <children>
       <Canvas fx:id="indicators" height="70.0" width="1000.0" />
       <Canvas fx:id="mapCanvas" height="620.0" width="1000.0" />
+      <Button fx:id="automaticTravel" onAction="#onAutomaticTravel" mnemonicParsing="false" text="Button" />
    </children>
 </VBox>

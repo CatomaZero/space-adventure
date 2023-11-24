@@ -1,5 +1,6 @@
 package ui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -45,7 +46,7 @@ public class PlayController implements Initializable {
         planetTooltip = new Tooltip();
 
         mapCanvas.setOnMouseClicked(this::handleMouseClick);
-        mapCanvas.setOnMouseMoved(this::handleMouseMoved);
+        //mapCanvas.setOnMouseMoved(this::handleMouseMoved);
     }
 
     private void handleMouseMoved(MouseEvent event) {
@@ -206,5 +207,10 @@ public class PlayController implements Initializable {
         int blue = random.nextInt(128) + 128;    // Rango: 128-255
 
         return Color.rgb(red, green, blue);
+    }
+
+    public void onAutomaticTravel(ActionEvent actionEvent) {
+        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),20);
+        System.out.println(prm);
     }
 }

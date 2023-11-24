@@ -56,7 +56,7 @@ public class Map {
                     targetNode = random.nextInt(SIZE);
                 } while (i == targetNode || map.hasEdge(i, targetNode));
 
-                double weight = random.nextDouble();
+                double weight = random.nextInt(15) + 1;
                 map.addEdge(i, targetNode, weight);
             }
         }

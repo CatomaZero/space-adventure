@@ -296,8 +296,8 @@ public class ListGraph<K> {
         return result.toString().trim();
     }
 
-    public String primMST() {
-        K startNodeKey = adjacency.get(0).getKey();
+    public String primMST(K startNodeKey, double gas) {
+        double gasInUse=0;
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         int numNodes = adjacency.size();
         boolean[] visited = new boolean[numNodes];
@@ -307,9 +307,11 @@ public class ListGraph<K> {
 
         visited[adjacency.indexOf(startNode)] = true;
 
-        while (mstEdges.size() < numNodes - 1) {
+        while (mstEdges.size() < numNodes - 1&& gasInUse <= gas) {
+            System.out.println("gasPerm: "+gas+". GasInUse: "+gasInUse);
             ArrayList<Edge<K>> edges = startNode.getEdges();
             for (Edge<K> edge : edges) {
+                System.out.println(edge.getTerminal().getKey());
                 Node<K> neighbor = (startNode == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
 
                 if (!visited[adjacency.indexOf(neighbor)]) {
@@ -318,10 +320,13 @@ public class ListGraph<K> {
             }
 
             Edge<K> minEdge = priorityQueue.poll();
+            System.out.println("min coso:"+ minEdge);
             Node<K> nextNode = (startNode == minEdge.getTerminal()) ? minEdge.getInitial() : minEdge.getTerminal();
-
-            if (!visited[adjacency.indexOf(nextNode)]) {
+            gasInUse+=minEdge.getWeight();
+            System.out.println(gasInUse);
+            if (!visited[adjacency.indexOf(nextNode)]&&gasInUse <= gas) {
                 mstEdges.add(minEdge);
+                System.out.println(gasInUse);
                 visited[adjacency.indexOf(nextNode)] = true;
                 startNode = nextNode;
             }
