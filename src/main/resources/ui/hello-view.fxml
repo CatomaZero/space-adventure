@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
-   <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-   </padding>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
    <children>
-      <Canvas fx:id="banner" height="319.0" width="900.0" />
-      <Button fx:id="play" mnemonicParsing="false" onAction="#onPlay" prefHeight="67.0" prefWidth="300.0" text="Play">
+      <Canvas fx:id="canvas" height="700.0" width="1000.0" />
+      <Button fx:id="play" layoutX="350.0" layoutY="395.0" mnemonicParsing="false" onAction="#onPlay" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Play" textFill="WHITE">
          <font>
-            <Font name="Arial Rounded MT Bold" size="36.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="howToPlay" layoutX="376.0" layoutY="437.0" mnemonicParsing="false" onAction="#onHowToPlay" prefHeight="67.0" prefWidth="300.0" text="How to play?">
+      <Button fx:id="howToPlay" layoutX="350.0" layoutY="473.0" mnemonicParsing="false" onAction="#onHowToPlay" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="How to play" textFill="WHITE">
          <font>
-            <Font name="Arial Rounded MT Bold" size="36.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="exit" layoutX="360.0" layoutY="480.0" mnemonicParsing="false" onAction="#onExit" prefHeight="67.0" prefWidth="300.0" text="Exit">
+      <Button fx:id="exit" layoutX="350.0" layoutY="552.0" mnemonicParsing="false" onAction="#onExit" prefHeight="60.0" prefWidth="300.0"  style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Exit" textFill="WHITE">
          <font>
-            <Font name="Arial Rounded MT Bold" size="36.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
    </children>
-</VBox>
+</Pane>
