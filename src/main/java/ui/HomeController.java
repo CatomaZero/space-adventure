@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
@@ -29,6 +30,9 @@ public class HomeController implements Initializable {
     @FXML
     private Button howToPlay;
 
+    @FXML
+    private ChoiceBox<String> graphOption;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -37,7 +41,7 @@ public class HomeController implements Initializable {
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         gc.drawImage(new Image(getClass().getResource(("/assets/background/home.png")).toExternalForm()), 0, 0, 1000, 700);
 
-        Font customFont = Font.loadFont(getClass().getResourceAsStream("/font/Fontspring-DEMO-greycliffcf-regular.otf"), 30);
+        Font customFont = Font.loadFont(getClass().getResourceAsStream("/font/Fontspring-DEMO-greycliffcf-regular.otf"), 25);
         play.setFont(customFont);
         howToPlay.setFont(customFont);
         exit.setFont(customFont);
@@ -45,6 +49,9 @@ public class HomeController implements Initializable {
         styleButton(play);
         styleButton(howToPlay);
         styleButton(exit);
+
+        graphOption.setStyle("-fx-background-color: transparent; -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-width: 2; -fx-border-color: white; -jfx-focus-color: white; -jfx-unfocus-color: white;");
+        graphOption.getSelectionModel().selectFirst();
     }
 
     private void styleButton(Button btn){

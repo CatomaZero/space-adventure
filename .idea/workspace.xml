@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/background/home.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/hello-view.fxml" afterDir="false" />
@@ -64,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ui",
     "last_opened_file_path": "C:/Users/saral/OneDrive - Universidad Icesi (@icesi.edu.co)/Desktop/space-adventure/src/main/resources/assets/background",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -201,7 +200,7 @@
       <workItem from="1700629192714" duration="1159000" />
       <workItem from="1700653258581" duration="3189000" />
       <workItem from="1700656566035" duration="3381000" />
-      <workItem from="1700844273187" duration="5341000" />
+      <workItem from="1700844273187" duration="8831000" />
     </task>
     <servers />
   </component>

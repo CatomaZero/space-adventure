@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -8,20 +10,28 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
    <children>
       <Canvas fx:id="canvas" height="700.0" width="1000.0" />
-      <Button fx:id="play" layoutX="350.0" layoutY="395.0" mnemonicParsing="false" onAction="#onPlay" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Play" textFill="WHITE">
+      <Button fx:id="play" layoutX="375.0" layoutY="395.0" mnemonicParsing="false" onAction="#onPlay" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Play" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="howToPlay" layoutX="350.0" layoutY="473.0" mnemonicParsing="false" onAction="#onHowToPlay" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="How to play" textFill="WHITE">
+      <Button fx:id="howToPlay" layoutX="375.0" layoutY="475.0" mnemonicParsing="false" onAction="#onHowToPlay" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="How to play" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="exit" layoutX="350.0" layoutY="552.0" mnemonicParsing="false" onAction="#onExit" prefHeight="60.0" prefWidth="300.0"  style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Exit" textFill="WHITE">
+      <Button fx:id="exit" layoutX="375.0" layoutY="552.0" mnemonicParsing="false" onAction="#onExit" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 2;" text="Exit" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Button>
+      <ChoiceBox fx:id="graphOption" layoutX="414.0" layoutY="628.0" prefHeight="29.0" prefWidth="172.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Adjacency list" />
+               <String fx:value="Adjacency matrix" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
    </children>
 </Pane>
