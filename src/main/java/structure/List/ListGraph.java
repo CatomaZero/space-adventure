@@ -1,6 +1,7 @@
 package structure.List;
 
 import structure.IGraph;
+import structure.INode;
 
 import java.util.*;
 
@@ -27,8 +28,8 @@ public class ListGraph<K> implements IGraph<K> {
             return "Empty graph";
         }
 
-        Node<K> initial = searchNode(keyInitial);
-        Node<K> terminal = searchNode(keyTerminal);
+        Node<K> initial = (Node<K>) searchNode(keyInitial);
+        Node<K> terminal = (Node<K>) searchNode(keyTerminal);
 
         if (initial == null || terminal == null) {
             return "One or both nodes not found.";
@@ -43,7 +44,7 @@ public class ListGraph<K> implements IGraph<K> {
 
 
     public String deleteNode(K key){
-        Node<K> node = searchNode(key);
+        Node<K> node = (Node<K>) searchNode(key);
         if(node == null){
             return "Node not found";
         }
@@ -65,8 +66,8 @@ public class ListGraph<K> implements IGraph<K> {
     }
 
     public String deleteEdge(K keyInitial, K keyTerminal) {
-        Node<K> initial = searchNode(keyInitial);
-        Node<K> terminal = searchNode(keyTerminal);
+        Node<K> initial = (Node<K>) searchNode(keyInitial);
+        Node<K> terminal = (Node<K>) searchNode(keyTerminal);
 
         if (initial == null || terminal == null) {
             return "One or both nodes not found.";
@@ -102,13 +103,13 @@ public class ListGraph<K> implements IGraph<K> {
     }
 
     public String consultNode(K key){
-        Node<K> node = searchNode(key);
+        Node<K> node = (Node<K>) searchNode(key);
         return node!=null?node.toString():"Node not found";
     }
 
     private Edge<K> consultEdgePriv(K keyInitial, K keyTerminal){
-        Node<K> initial = searchNode(keyInitial);
-        Node<K> terminal = searchNode(keyTerminal);
+        Node<K> initial = (Node<K>) searchNode(keyInitial);
+        Node<K> terminal = (Node<K>) searchNode(keyTerminal);
 
         for(Node<K> node : adjacency){
             for(Edge<K> edge : node.getEdges()){
@@ -131,7 +132,7 @@ public class ListGraph<K> implements IGraph<K> {
             return "Empty graph";
         }
 
-        Node<K> node = searchNode(key);
+        Node<K> node = (Node<K>) searchNode(key);
         if(node == null){
             return "Node not found";
         }
@@ -164,7 +165,7 @@ public class ListGraph<K> implements IGraph<K> {
             return "Empty graph";
         }
 
-        Node<K> node = searchNode(key);
+        Node<K> node = (Node<K>) searchNode(key);
         if(node == null){
             return "Node not found";
         }
@@ -176,7 +177,7 @@ public class ListGraph<K> implements IGraph<K> {
 
     private String DFSAux(K key,K root,boolean[] visited,int times) {
         String result = "";
-        Node<K> current = searchNode(root);
+        Node<K> current = (Node<K>) searchNode(root);
         if (current.getKey() == key) {
             result += current.getKey() + " ";
         }
@@ -199,7 +200,7 @@ public class ListGraph<K> implements IGraph<K> {
     }
 
     public double[] dijkstra(K key) {
-        Node<K> sourceNode = searchNode(key);
+        Node<K> sourceNode = (Node<K>) searchNode(key);
         if (sourceNode == null) {
             return null;
         }
@@ -307,7 +308,7 @@ public class ListGraph<K> implements IGraph<K> {
         boolean[] visited = new boolean[numNodes];
 
         PriorityQueue<Edge<K>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
-        Node<K> startNode = searchNode(startNodeKey);
+        Node<K> startNode = (Node<K>) searchNode(startNodeKey);
 
         visited[adjacency.indexOf(startNode)] = true;
 
@@ -378,7 +379,7 @@ public class ListGraph<K> implements IGraph<K> {
         parent.put(rootX, rootY);
     }
 
-    public Node<K> searchNode(K key){
+    public INode<K> searchNode(K key){
         for (Node<K> node : adjacency) {
             if(node.getKey().equals(key)){
                 return node;
@@ -388,8 +389,8 @@ public class ListGraph<K> implements IGraph<K> {
     }
 
     public boolean hasEdge(K keyInitial, K keyTerminal){
-        Node<K> initial = searchNode(keyInitial);
-        Node<K> terminal = searchNode(keyTerminal);
+        Node<K> initial = (Node<K>) searchNode(keyInitial);
+        Node<K> terminal = (Node<K>) searchNode(keyTerminal);
 
         if(initial == null || terminal == null){
             return false;
@@ -407,11 +408,6 @@ public class ListGraph<K> implements IGraph<K> {
 
     public int size(){
         return adjacency.size();
-    }
-
-    @Override
-    public Node<Integer> searchNode(int id) {
-        return null;
     }
 
     @Override

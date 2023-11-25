@@ -1,7 +1,9 @@
 package structure.List;
 
+import structure.INode;
+
 import java.util.ArrayList;
-public class Node<K> {
+public class Node<K> implements INode<K> {
     private K key;
     private ArrayList<Edge<K>> edges;
 
@@ -12,6 +14,11 @@ public class Node<K> {
 
     public void addEdge(Edge<K> e){
         edges.add(e);
+    }
+
+    @Override
+    public void setKey(K key) {
+        this.key = key;
     }
 
     public K getKey() {

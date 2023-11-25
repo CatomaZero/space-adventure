@@ -1,6 +1,11 @@
 package structure.Matrix;
 
-public class Node<K> {
+import structure.INode;
+import structure.List.Edge;
+
+import java.util.ArrayList;
+
+public class Node<K> implements INode<K> {
     private K key;
     public Node(K key){
         this.key = key;
@@ -12,5 +17,10 @@ public class Node<K> {
 
     public K getKey() {
         return key;
+    }
+
+    @Override
+    public ArrayList<Edge<K>> getEdges() {
+        return null;
     }
 }

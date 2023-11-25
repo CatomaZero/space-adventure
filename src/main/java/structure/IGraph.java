@@ -23,4 +23,5 @@ public interface IGraph<K> {
     int size();
     boolean hasEdge(K i,K targetNode);
     ArrayList<K> getNeighbors(K id);
+    INode<K> searchNode(K key);
 }

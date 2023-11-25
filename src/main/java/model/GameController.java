@@ -2,6 +2,7 @@ package model;
 
 import model.map.Map;
 import structure.IGraph;
+import structure.INode;
 import structure.List.ListGraph;
 import structure.List.Node;
 
@@ -31,7 +32,7 @@ public class GameController {
         boolean[] visited=new boolean[20];
         int times=3;
         for (int i=0;i<way.length;i++) {
-            Node<Integer> currentNode = map.searchNode(Integer.parseInt(way[i]));
+            INode<Integer> currentNode = map.searchNode(Integer.parseInt(way[i]));
             if (verifyWay(currentNode, key, times,map,visited)){
                 this.way[i]= String.valueOf(currentNode.getKey());
                 times--;
@@ -40,7 +41,7 @@ public class GameController {
     }
 
     //Metodo que verifique que el camino lleva al destinogit pu
-    public boolean verifyWay(Node<Integer> currentNode, int key, int times,IGraph<Integer> map,boolean[] visited){
+    public boolean verifyWay(INode<Integer> currentNode, int key, int times,IGraph<Integer> map,boolean[] visited){
         String[] mayWay=map.DFS(key,currentNode.getKey(),times).split(" ");
         for(String m:mayWay) {
             if (!m.isEmpty()) {
