@@ -13,6 +13,7 @@ import model.GameController;
 import model.entities.Player;
 import model.map.Enviroment;
 import model.map.Map;
+import model.map.TypeImplementation;
 
 import java.net.URL;
 import java.util.Random;
@@ -39,7 +40,8 @@ public class PlayController implements Initializable {
         gc.setFill(Color.web("#001020"));
         gc.fillRect(0, 0, mapCanvas.getWidth(), mapCanvas.getHeight());
 
-        map = new Map();
+        // Aqui se debe recibir la opcion del usuario, que aun no esta, esto permite elegir la implementacion que se desea usar
+        map = new Map(TypeImplementation.LIST);
         controller = new GameController();
         drawGraph();
 

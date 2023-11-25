@@ -4,7 +4,7 @@ import structure.IGraph;
 
 import java.util.*;
 
-public class ListGraph<K> {
+public class ListGraph<K> implements IGraph<K> {
     private ArrayList<Node<K>> adjacency;
 
     public ListGraph(){
@@ -106,7 +106,7 @@ public class ListGraph<K> {
         return node!=null?node.toString():"Node not found";
     }
 
-    public Edge<K> consultEdge(K keyInitial, K keyTerminal){
+    private Edge<K> consultEdgePriv(K keyInitial, K keyTerminal){
         Node<K> initial = searchNode(keyInitial);
         Node<K> terminal = searchNode(keyTerminal);
 
@@ -118,6 +118,10 @@ public class ListGraph<K> {
             }
         }
 
+        return null;
+    }
+
+    public String consultEdge(K keyInitial, K keyTerminal){
         return null;
     }
 
@@ -247,7 +251,7 @@ public class ListGraph<K> {
 
         for (int i = 0; i < numNodes; i++) {
             for (int j = 0; j < numNodes; j++) {
-                Edge<K> edge = consultEdge(adjacency.get(i).getKey(), adjacency.get(j).getKey());
+                Edge<K> edge = consultEdgePriv(adjacency.get(i).getKey(), adjacency.get(j).getKey());
                 if (i == j) {
                     dist[i][j] = 0;
                 } else if (edge != null) {
@@ -288,7 +292,12 @@ public class ListGraph<K> {
         return stringBuilder.toString().trim();
     }
 
-    private String printMST(ArrayList<Edge<K>> mstEdges) {
+    @Override
+    public String primMST() {
+        return null;
+    }
+
+    public String printMST(ArrayList<Edge<K>> mstEdges) {
         StringBuilder result = new StringBuilder();
         for (Edge<K> edge : mstEdges) {
             result.append(edge.toString()).append("\n");

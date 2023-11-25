@@ -2,6 +2,7 @@ package model.map;
 
 import javafx.scene.image.Image;
 import model.entities.Player;
+import structure.IGraph;
 import structure.List.Edge;
 import structure.List.ListGraph;
 import structure.Matrix.MatrixGraph;
@@ -13,16 +14,21 @@ import java.util.Random;
 public class Map {
     public static final int SIZE = 50;
     public static final int MAX_EDGES = 1;
-    private ListGraph<Integer> map;
+    private IGraph<Integer> map;
     private ArrayList<Enviroment> enviroments;
 
-    public Map() {
-        map = new ListGraph<>();
+    public Map(TypeImplementation imp) {
         enviroments = new ArrayList<>();
-        initializeMapList();
+        initializeMap(imp);
     }
 
-    public void initializeMapList() {
+    public void initializeMap(TypeImplementation imp) {
+        if(imp == TypeImplementation.LIST){
+            map = new ListGraph<>();
+        } else {
+            map = new MatrixGraph<>();
+        }
+
         int canvasWidth = 1000 - 100;
         int canvasHeight = 620 - 100;
         int minDistance = 50;
@@ -77,10 +83,6 @@ public class Map {
         } while (indexRamiel % 5 == 0 || indexRamiel == indexNarajita);
 
         Player.getInstance().setCoordinates(enviroments.get(indexRamiel).getX(), enviroments.get(indexRamiel).getY());
-    }
-
-    public void initializeMapMatrix(){
-
     }
 
     private boolean isValidPosition(double x, double y, ArrayList<Enviroment> existingEnviroments, int minDistance) {
