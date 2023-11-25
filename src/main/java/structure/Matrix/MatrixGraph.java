@@ -196,34 +196,42 @@ public class MatrixGraph<K> implements IGraph<K> {
         }
     }
 
-    public String DFS(K key,K root,int times) {
-        Node<K> startNode = searchNode(root);
-        founded=false;
-        if (startNode != null) {
-            StringBuilder result = new StringBuilder();
-            boolean[] visited = new boolean[nodes.size()];
-            dfsRecursive(startNode,key,times,visited, result);
-
-            return result.toString().trim();
-        } else {
-            return "Node not found.";
+    public String DFS(K key, K root, int times) {
+        if (isEmptyGraph()) {
+            return "Empty graph";
         }
+
+        Node<K> node = searchNode(key);
+        if (node == null) {
+            return "Node not found";
+        }
+
+        boolean[] visited = new boolean[nodes.size()];
+
+        return DFSAux(key, root, visited, times).trim();
     }
 
-    private void dfsRecursive(Node<K> current,K key,int times, boolean[] visited, StringBuilder result) {
-        visited[nodes.indexOf(current)] = true;
-        result.append(current.getKey()).append(" ");
-        if(current.getKey()==key){
-            founded=true;
+    private String DFSAux(K key, K root, boolean[] visited, int times) {
+        String result = "";
+        Node<K> current = searchNode(root);
+        if (current.getKey().equals(key)) {
+            result += current.getKey() + " ";
         }
-        if(!founded) {
+        if (times > 0 && !current.getKey().equals(key)) {
+            int index = nodes.indexOf(current);
+
+            visited[index] = true;
+            result = current.getKey() + " ";
+
             for (int i = 0; i < nodes.size(); i++) {
-                if (adjacencyMatrix.get(nodes.indexOf(current)).get(i) != Double.POSITIVE_INFINITY && !visited[i] && times > 0) {
-                    times--;
-                    dfsRecursive(nodes.get(i), key, times, visited, result);
+                if (!visited[i] && adjacencyMatrix.get(index).get(i) != Double.POSITIVE_INFINITY) {
+                    Node<K> currentV = nodes.get(i);
+                    result += DFSAux(key, currentV.getKey(), visited, times - 1);
                 }
             }
+            return result;
         }
+        return result;
     }
 
     public double[] dijkstra(K key) {
