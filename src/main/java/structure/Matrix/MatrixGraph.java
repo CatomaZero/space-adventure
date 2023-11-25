@@ -397,6 +397,10 @@ public class MatrixGraph<K> implements IGraph<K> {
         return false;
     }
 
+    private structure.List.Node<Integer> searchNode(int id) {
+        return null;
+    }
+
     @Override
     public ArrayList<K> getNeighbors(K id) {
         ArrayList<K> neighbors = new ArrayList<>();
