@@ -40,5 +40,5 @@ public interface IGraph<K> {
 
     Node<Integer> searchNode(int id);
 
-    ArrayList<> getEdges(K id);
+    ArrayList<K> getNeighbors(K id);
 }

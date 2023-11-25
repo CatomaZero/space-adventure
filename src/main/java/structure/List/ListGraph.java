@@ -415,8 +415,12 @@ public class ListGraph<K> implements IGraph<K> {
     }
 
     @Override
-    public ArrayList<structure.Matrix.Edge<K>> getEdges(K id) {
-        Node<K> searchNode=searchNode(id);
-
+    public ArrayList<K> getNeighbors(K id) {
+        ArrayList<K> neighbors = new ArrayList<>();
+        for (Edge<K> edge : searchNode(id).getEdges()) {
+            K neighborId = (edge.getInitial().getKey() == id) ? edge.getTerminal().getKey() : edge.getInitial().getKey();
+            neighbors.add(neighborId);
+        }
+        return neighbors;
     }
 }

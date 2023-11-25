@@ -100,12 +100,7 @@ public class Map {
     }
 
     public ArrayList<Integer> getNeighbors(int nodeId) {
-        ArrayList<Integer> neighbors = new ArrayList<>();
-        for (Edge<Integer> edge : map.searchNode(nodeId).getEdges()) {
-            int neighborId = (edge.getInitial().getKey() == nodeId) ? edge.getTerminal().getKey() : edge.getInitial().getKey();
-            neighbors.add(neighborId);
-        }
-        return neighbors;
+        return map.getNeighbors(nodeId);
     }
 
     public int size(){

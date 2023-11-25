@@ -398,8 +398,15 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     @Override
-    public structure.List.Node<Integer> searchNode(int id) {
-        return null;
+    public ArrayList<K> getNeighbors(K id) {
+        ArrayList<K> neighbors = new ArrayList<>();
+        for (Edge<K> edge : edges){
+            if ((edge.getInitial().getKey() == id || (edge.getTerminal().getKey() == id))) {
+                K neighborId = (edge.getInitial().getKey() == id) ? edge.getTerminal().getKey() : edge.getInitial().getKey();
+                neighbors.add(neighborId);
+            }
+        }
+        return neighbors;
     }
 
     private K find(Map<K, K> parent, K nodeKey) {
