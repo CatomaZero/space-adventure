@@ -23,6 +23,15 @@ public class Map {
         initializeMap(imp);
     }
 
+    public Enviroment getEnviroment(int num){
+        for(Enviroment e : enviroments){
+            if(e.getKey() == num){
+                return e;
+            }
+        }
+        return null;
+    }
+
     public void initializeMap(TypeImplementation imp) {
         if(imp == TypeImplementation.LIST){
             map = new ListGraph<>();

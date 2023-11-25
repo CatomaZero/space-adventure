@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
@@ -170,8 +171,32 @@ public class PlayController implements Initializable {
         }
         if(j>0) {
             if (movement[0] != null && movement[movement.length - 1] != null && Integer.parseInt(movement[0]) == playerPlace && Integer.parseInt(movement[movement.length - 1]) == key) {
+                int node = Integer.parseInt(movement[movement.length - 1]);
+
+                Enviroment nodeOrigin = map.getEnviroment(Integer.parseInt(movement[0]));
+                Enviroment nodeToTravel = map.getEnviroment(node);
+
                 Player.getInstance().setTravel(movement);
-                HelloApplication.showWindow("travel", null);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+                alert.setTitle("Space Adventure");
+                alert.setHeaderText("Your travel is: " + movement);
+
+                ButtonType buttonTypeAceptar = new ButtonType("Accept");
+                ButtonType buttonTypeCancelar = new ButtonType("Decline");
+
+                alert.getButtonTypes().setAll(buttonTypeAceptar, buttonTypeCancelar);
+
+                alert.showAndWait().ifPresent(response -> {
+                    if (response == buttonTypeAceptar) {
+                        Player.getInstance().setCoordinates(nodeToTravel.getX(), nodeToTravel.getY());
+                        Player.getInstance().drawPlayer(mapCanvas.getGraphicsContext2D());
+
+                        nodeOrigin.drawEnviroment(mapCanvas.getGraphicsContext2D());
+                    } else {
+                        System.out.println("Travel canceled.");
+                    }
+                });
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("You can not travel that far :b");
