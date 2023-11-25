@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/map/TypeImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/IGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/IGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/IGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/List/ListGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/structure/Matrix/MatrixGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/PlayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/PlayController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,11 +211,23 @@
       <workItem from="1700844273187" duration="5341000" />
       <workItem from="1700859885228" duration="11036000" />
       <workItem from="1700872804842" duration="429000" />
+      <workItem from="1700874202561" duration="4689000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

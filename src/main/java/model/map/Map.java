@@ -112,7 +112,7 @@ public class Map {
         return map.size();
     }
 
-    public ListGraph<Integer> getMap() {
+    public IGraph<Integer> getMap() {
         return map;
     }
 }

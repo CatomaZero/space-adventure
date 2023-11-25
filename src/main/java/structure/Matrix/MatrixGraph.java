@@ -327,7 +327,8 @@ public class MatrixGraph<K> implements IGraph<K> {
         return result.toString().trim();
     }
 
-    public String primMST() {
+    @Override
+    public String primMST(K startNodeKey, double gas) {
         int numNodes = nodes.size();
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         boolean[] visited = new boolean[numNodes];
@@ -384,6 +385,21 @@ public class MatrixGraph<K> implements IGraph<K> {
         }
 
         return printMST(mstEdges);
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean hasEdge(K i, K targetNode) {
+        return false;
+    }
+
+    @Override
+    public structure.List.Node<Integer> searchNode(int id) {
+        return null;
     }
 
     private K find(Map<K, K> parent, K nodeKey) {

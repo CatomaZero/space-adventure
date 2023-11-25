@@ -292,11 +292,6 @@ public class ListGraph<K> implements IGraph<K> {
         return stringBuilder.toString().trim();
     }
 
-    @Override
-    public String primMST() {
-        return null;
-    }
-
     public String printMST(ArrayList<Edge<K>> mstEdges) {
         StringBuilder result = new StringBuilder();
         for (Edge<K> edge : mstEdges) {
@@ -304,7 +299,7 @@ public class ListGraph<K> implements IGraph<K> {
         }
         return result.toString().trim();
     }
-
+    @Override
     public String primMST(K startNodeKey, double gas) {
         double gasInUse=0;
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
@@ -412,5 +407,16 @@ public class ListGraph<K> implements IGraph<K> {
 
     public int size(){
         return adjacency.size();
+    }
+
+    @Override
+    public Node<Integer> searchNode(int id) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<structure.Matrix.Edge<K>> getEdges(K id) {
+        Node<K> searchNode=searchNode(id);
+
     }
 }

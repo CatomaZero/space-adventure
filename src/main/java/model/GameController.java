@@ -1,6 +1,7 @@
 package model;
 
 import model.map.Map;
+import structure.IGraph;
 import structure.List.ListGraph;
 import structure.List.Node;
 
@@ -12,12 +13,12 @@ public class GameController {
     }
 
     public String verifyClosestNodeDFS(int closestNode,int playerNode, Map mapUsing){
-        ListGraph<Integer> map=mapUsing.getMap();
+        IGraph<Integer> map=mapUsing.getMap();
         return map.DFS(closestNode,playerNode,3);
     }
 
     //Metodo que inicializa variables y arranca los metodos
-    public void doMove(String way,int key,ListGraph<Integer> map){
+    public void doMove(String way,int key,IGraph<Integer> map){
         System.out.println("Impresión 1, camino: "+way);
         this.way=new String[20];
         String[] waySplit=way.split(" ");
@@ -26,7 +27,7 @@ public class GameController {
     }
 
     //Metodo que hace un camino
-    public void makeAWay(String[] way,int key,ListGraph<Integer> map){
+    public void makeAWay(String[] way,int key,IGraph<Integer> map){
         boolean[] visited=new boolean[20];
         int times=3;
         for (int i=0;i<way.length;i++) {
@@ -39,7 +40,7 @@ public class GameController {
     }
 
     //Metodo que verifique que el camino lleva al destinogit pu
-    public boolean verifyWay(Node<Integer> currentNode, int key, int times,ListGraph<Integer> map,boolean[] visited){
+    public boolean verifyWay(Node<Integer> currentNode, int key, int times,IGraph<Integer> map,boolean[] visited){
         String[] mayWay=map.DFS(key,currentNode.getKey(),times).split(" ");
         for(String m:mayWay) {
             if (!m.isEmpty()) {
@@ -52,7 +53,7 @@ public class GameController {
         return false;
     }
 
-    public void verifyMovement(ListGraph<Integer> map){
+    public void verifyMovement(IGraph<Integer> map){
         String movement1="";
         String movement2="";
 

@@ -1,5 +1,10 @@
 package structure;
 
+import structure.List.Node;
+import structure.Matrix.Edge;
+
+import java.util.ArrayList;
+
 public interface IGraph<K> {
     String addNode(K key);
 
@@ -25,7 +30,15 @@ public interface IGraph<K> {
 
     String getFloydWarshallResultString();
 
-    String primMST();
+    String primMST(K startNodeKey,double gas);
 
     String kruskalMST();
+
+    int size();
+
+    boolean hasEdge(K i,K targetNode);
+
+    Node<Integer> searchNode(int id);
+
+    ArrayList<> getEdges(K id);
 }
