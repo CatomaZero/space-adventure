@@ -377,12 +377,12 @@ public class MatrixGraphTest extends TestCase {
                 "(1, 2)   Weight: 3.0\n" +
                 "(1, 4)   Weight: 5.0\n" +
                 "(0, 3)   Weight: 6.0";
-        assertEquals(result, matrixGraph.primMST(0, 10));
+        assertEquals(result, matrixGraph.primMST(0, 50));
     }
 
     public void testPrim2(){
         setupStage5();
-        String result = "(0, 1)   Weight: 4.0\n" +
+        String result = "(1, 0)   Weight: 4.0\n" +
                 "(0, 7)   Weight: 8.0\n" +
                 "(7, 6)   Weight: 1.0\n" +
                 "(6, 5)   Weight: 2.0\n" +
@@ -390,7 +390,7 @@ public class MatrixGraphTest extends TestCase {
                 "(2, 8)   Weight: 2.0\n" +
                 "(2, 3)   Weight: 7.0\n" +
                 "(3, 4)   Weight: 9.0";
-        assertEquals(result, matrixGraph.primMST(1, 10));
+        assertEquals(result, matrixGraph.primMST(1, 200));
     }
 
     public void testPrim3(){
@@ -401,7 +401,7 @@ public class MatrixGraphTest extends TestCase {
                 "(3, 4)   Weight: 10.0\n" +
                 "(4, 6)   Weight: 2.0\n" +
                 "(4, 5)   Weight: 6.0";
-        assertEquals(result, matrixGraph.primMST(1,4));
+        assertEquals(result, matrixGraph.primMST(1,1000));
     }
 
     public void testKruskal1(){

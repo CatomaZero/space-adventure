@@ -78,6 +78,7 @@ public class PlayController implements Initializable {
 
         int closestNode = findClosestNode(mouseX, mouseY);
 
+
         if(closestNode != -1){
             showPlanetInfoTooltip(map.getEnviroments().get(closestNode), event.getScreenX(), event.getScreenY());
         } else {
@@ -100,16 +101,20 @@ public class PlayController implements Initializable {
         // Se busca donde está el jugador para poder hacer la busquedad
         int playerPlace=findClosestNode(Player.getInstance().getX(),Player.getInstance().getY());
 
+
         //Marca el camino de conexión desde el planeta actual hasta 3 planetas de distancia para luego verificar si existe un camino para llegar al planeta destino
         String way=verifyClosestNodeDFS(closestNode,playerPlace);
 
         //Verificar que en el caso que sí haya conexiones entre planetas, como se deberá hacer el viaje
         doMove(way,closestNode);
 
+        System.out.println(Arrays.toString(controller.getWay()));
+
+        System.out.println("Player place:"+playerPlace+". Node key: "+closestNode);
 
         if(howToMove(closestNode,playerPlace)) {
             movePlayerToNode(closestNode);
-            Player.getInstance().setClose(false);
+
         }
 
         // Volver a dibujar el gráfico
@@ -166,7 +171,6 @@ public class PlayController implements Initializable {
             if (movement[0] != null && movement[movement.length - 1] != null && Integer.parseInt(movement[0]) == playerPlace && Integer.parseInt(movement[movement.length - 1]) == key) {
                 Player.getInstance().setTravel(movement);
                 HelloApplication.showWindow("travel", null);
-                return Player.getInstance().isMove();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("You can not travel that far :b");
@@ -232,7 +236,7 @@ public class PlayController implements Initializable {
     }
 
     public void onAutomaticTravel(ActionEvent actionEvent) {
-        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),20);
+        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),40);
         System.out.println(prm);
     }
 }

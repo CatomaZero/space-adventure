@@ -361,8 +361,8 @@ public class ListGraph<K> implements IGraph<K> {
         return null;
     }
     public boolean hasEdge(K keyInitial, K keyTerminal){
-        Node<K> initial = (Node<K>) searchNode(keyInitial);
-        Node<K> terminal = (Node<K>) searchNode(keyTerminal);
+        Node<K> initial = searchNode(keyInitial);
+        Node<K> terminal = searchNode(keyTerminal);
 
         if(initial == null || terminal == null){
             return false;
