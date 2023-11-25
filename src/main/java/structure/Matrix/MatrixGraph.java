@@ -223,13 +223,12 @@ public class MatrixGraph<K> implements IGraph<K> {
             visited[index] = true;
             result = current.getKey() + " ";
 
-            for (int i = 0; i < nodes.size(); i++) {
-                if (!visited[i] && adjacencyMatrix.get(index).get(i) != Double.POSITIVE_INFINITY) {
-                    Node<K> currentV = nodes.get(i);
+            for (Edge<K> edge : getNeighborsEdge(current.getKey())) {
+                Node<K> currentV = (current == edge.getTerminal()) ? edge.getInitial() : edge.getTerminal();
+                if (!visited[nodes.indexOf(currentV)]) {
                     result += DFSAux(key, currentV.getKey(), visited, times - 1);
                 }
             }
-            return result;
         }
         return result;
     }
@@ -418,6 +417,16 @@ public class MatrixGraph<K> implements IGraph<K> {
             if ((edge.getInitial().getKey() == id || (edge.getTerminal().getKey() == id))) {
                 K neighborId = (edge.getInitial().getKey() == id) ? edge.getTerminal().getKey() : edge.getInitial().getKey();
                 neighbors.add(neighborId);
+            }
+        }
+        return neighbors;
+    }
+
+    public ArrayList<Edge<K>> getNeighborsEdge(K id) {
+        ArrayList<Edge<K>> neighbors = new ArrayList<>();
+        for (Edge<K> edge : edges){
+            if ((edge.getInitial().getKey() .equals(id) || (edge.getTerminal().getKey().equals(id)))) {
+                neighbors.add(edge);
             }
         }
         return neighbors;
