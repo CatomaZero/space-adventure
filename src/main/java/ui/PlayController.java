@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -17,8 +18,7 @@ import model.map.Map;
 import model.map.TypeImplementation;
 
 import java.net.URL;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PlayController implements Initializable {
 
@@ -36,13 +36,25 @@ public class PlayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<String> choices = new ArrayList<>();
+        choices.add("Adjacency List");
+        choices.add("Adjacency Matrix");
+
+        ChoiceDialog<String> dialog = new ChoiceDialog<>(choices.get(0), choices);
+        dialog.setTitle("Implementation Choice");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Choose the graph implementation:");
+
+        Optional<String> result = dialog.showAndWait();
+
+        result.ifPresent(this::handleUserChoice);
+
+
         GraphicsContext gc = mapCanvas.getGraphicsContext2D();
 
         gc.setFill(Color.web("#001020"));
         gc.fillRect(0, 0, mapCanvas.getWidth(), mapCanvas.getHeight());
 
-        // Aqui se debe recibir la opcion del usuario, que aun no esta, esto permite elegir la implementacion que se desea usar
-        map = new Map(TypeImplementation.LIST);
         controller = new GameController();
         drawGraph();
 
@@ -50,6 +62,14 @@ public class PlayController implements Initializable {
 
         mapCanvas.setOnMouseClicked(this::handleMouseClick);
         //mapCanvas.setOnMouseMoved(this::handleMouseMoved);
+    }
+
+    private void handleUserChoice(String s) {
+        if(s.equals("Adjacency List")){
+            map = new Map(TypeImplementation.LIST);
+        } else {
+            map = new Map(TypeImplementation.MATRIX);
+        }
     }
 
     private void handleMouseMoved(MouseEvent event) {
