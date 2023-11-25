@@ -379,7 +379,7 @@ public class ListGraph<K> implements IGraph<K> {
         parent.put(rootX, rootY);
     }
 
-    public INode<K> searchNode(K key){
+    public Node<K> searchNode(K key){
         for (Node<K> node : adjacency) {
             if(node.getKey().equals(key)){
                 return node;

@@ -1,6 +1,7 @@
 package structure.Matrix;
 
 import structure.IGraph;
+import structure.INode;
 
 import java.util.*;
 
@@ -18,7 +19,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String addNode(K key) {
-        if(findNode(key) != null){
+        if(searchNode(key) != null){
             return "The addition of this node is not possible as there is one with the same key.";
 
         }
@@ -41,8 +42,8 @@ public class MatrixGraph<K> implements IGraph<K> {
             return "Empty graph";
         }
 
-        Node<K> initialNode = findNode(keyInitial);
-        Node<K> terminalNode = findNode(keyTerminal);
+        Node<K> initialNode = searchNode(keyInitial);
+        Node<K> terminalNode = searchNode(keyTerminal);
 
         if (initialNode != null && terminalNode != null) {
             Edge<K> newEdge = new Edge<>(weight, initialNode, terminalNode);
@@ -69,7 +70,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String deleteNode(K key) {
-        Node<K> nodeToDelete = findNode(key);
+        Node<K> nodeToDelete = searchNode(key);
 
         if (nodeToDelete != null) {
             int index = nodes.indexOf(nodeToDelete);
@@ -89,8 +90,8 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String deleteEdge(K keyInitial, K keyTerminal) {
-        Node<K> initialNode = findNode(keyInitial);
-        Node<K> terminalNode = findNode(keyTerminal);
+        Node<K> initialNode = searchNode(keyInitial);
+        Node<K> terminalNode = searchNode(keyTerminal);
 
         if(initialNode == null || terminalNode == null){
             return "One or both nodes not found.";
@@ -138,7 +139,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String consultNode(K key) {
-        Node<K> node = findNode(key);
+        Node<K> node = searchNode(key);
         if (node != null) {
             return node.toString();
         } else {
@@ -147,8 +148,8 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String consultEdge(K keyInitial, K keyTerminal) {
-        Node<K> initialNode = findNode(keyInitial);
-        Node<K> terminalNode = findNode(keyTerminal);
+        Node<K> initialNode = searchNode(keyInitial);
+        Node<K> terminalNode = searchNode(keyTerminal);
 
         if (initialNode != null && terminalNode != null) {
             Edge<K> edge = findEdge(initialNode, terminalNode);
@@ -163,7 +164,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String BFS(K key) {
-        Node<K> startNode = findNode(key);
+        Node<K> startNode = searchNode(key);
 
         if (startNode != null) {
             StringBuilder result = new StringBuilder();
@@ -191,7 +192,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String DFS(K key,K root,int times) {
-        Node<K> startNode = findNode(root);
+        Node<K> startNode = searchNode(root);
         founded=false;
         if (startNode != null) {
             StringBuilder result = new StringBuilder();
@@ -221,7 +222,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public double[] dijkstra(K key) {
-        Node<K> startNode = findNode(key);
+        Node<K> startNode = searchNode(key);
 
         if (startNode != null) {
             int size = nodes.size();
@@ -444,7 +445,7 @@ public class MatrixGraph<K> implements IGraph<K> {
         return allEdges;
     }
 
-    private Node<K> findNode(K key) {
+    public Node<K> searchNode(K key) {
         for (Node<K> node : nodes) {
             if (node.getKey().equals(key)) {
                 return node;
