@@ -12,6 +12,7 @@ import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import model.GameController;
 import model.entities.Player;
 import model.map.Enviroment;
@@ -149,7 +150,7 @@ public class PlayController implements Initializable {
     }
 
     public boolean howToMove(int key,int playerPlace){
-        String[] ways=controller.getWay();
+        String[] ways = controller.getWay();
         int cont=0;
 
         for (String way : ways) {
@@ -180,7 +181,7 @@ public class PlayController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
                 alert.setTitle("Space Adventure");
-                alert.setHeaderText("Your travel is: " + movement);
+                alert.setHeaderText("Your travel is: " + printArray(movement));
 
                 ButtonType buttonTypeAceptar = new ButtonType("Accept");
                 ButtonType buttonTypeCancelar = new ButtonType("Decline");
@@ -193,10 +194,23 @@ public class PlayController implements Initializable {
                         Player.getInstance().drawPlayer(mapCanvas.getGraphicsContext2D());
 
                         nodeOrigin.drawEnviroment(mapCanvas.getGraphicsContext2D());
+
+                        if(nodeToTravel.isNaranjita()){
+                            Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+                            alert2.setTitle("Found Naranjita");
+                            alert2.setHeaderText(null);
+                            alert2.setContentText("You have found Naranjita!");
+                            alert2.showAndWait();
+
+                            HelloApplication.hideWindow((Stage) mapCanvas.getScene().getWindow());
+                            HelloApplication.showWindow("hello-view", null);
+                        }
                     } else {
                         System.out.println("Travel canceled.");
                     }
                 });
+
+
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("You can not travel that far :b");
@@ -215,7 +229,6 @@ public class PlayController implements Initializable {
     }
 
     private void movePlayerToNode(int nodeId) {
-        // Mover al jugador a la posición del nodo
         Enviroment node = map.getEnviroments().get(nodeId);
         Player.getInstance().setCoordinates(node.getX(), node.getY());
     }
@@ -253,18 +266,87 @@ public class PlayController implements Initializable {
     private Color generateRandomColor() {
         Random random = new Random();
 
-        // Ajustar los valores RGB para obtener colores más claros
-        int red = random.nextInt(128) + 128;     // Rango: 128-255
-        int green = random.nextInt(128) + 128;   // Rango: 128-255
-        int blue = random.nextInt(128) + 128;    // Rango: 128-255
+        int red = random.nextInt(128) + 128;
+        int green = random.nextInt(128) + 128;
+        int blue = random.nextInt(128) + 128;
 
         return Color.rgb(red, green, blue);
     }
 
     public void onAutomaticTravel(ActionEvent actionEvent) {
-        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),20);
-        System.out.println(prm);
+        String prm = map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),20);
         controller.doAutomaticWay(prm,map);
-        System.out.println(Arrays.toString(controller.getWay()));
+
+        String[] ways = controller.getWay();
+        int cont=0;
+
+        for (String way : ways) {
+            if (way != null) {
+                cont++;
+                System.out.println(way);
+            }
+        }
+        String[] movement=new String[cont];
+
+        int j=0;
+
+        for (String way : ways) {
+            if (way != null&&cont>0) {
+                movement[j]=way;
+                j++;
+                cont--;
+            }
+        }
+
+        int node = Integer.parseInt(movement[movement.length - 1]);
+
+        Enviroment nodeOrigin = map.getEnviroment(Integer.parseInt(movement[0]));
+        Enviroment nodeToTravel = map.getEnviroment(node);
+
+        Player.getInstance().setTravel(movement);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+        alert.setTitle("Space Adventure");
+        alert.setHeaderText("Your travel is: " + printArray(movement));
+
+        ButtonType buttonTypeAceptar = new ButtonType("Accept");
+        ButtonType buttonTypeCancelar = new ButtonType("Decline");
+
+        alert.getButtonTypes().setAll(buttonTypeAceptar, buttonTypeCancelar);
+
+        alert.showAndWait().ifPresent(response -> {
+            if (response == buttonTypeAceptar) {
+                Player.getInstance().setCoordinates(nodeToTravel.getX(), nodeToTravel.getY());
+                Player.getInstance().drawPlayer(mapCanvas.getGraphicsContext2D());
+
+                nodeOrigin.drawEnviroment(mapCanvas.getGraphicsContext2D());
+            } else {
+                System.out.println("Travel canceled.");
+            }
+        });
+    }
+
+    public String lastNonNullValue(String[] array) {
+        if (array == null || array.length == 0) {
+            return null;
+        }
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (array[i] != null) {
+                return array[i];
+            }
+        }
+        return null;
+    }
+
+    public String printArray(String[] array) {
+        String result = "";
+        if (array == null || array.length == 0) {
+            return result;
+        }
+
+        for (int i = 0; i < array.length - 1; i++) {
+            result += "  " + array[i] + "  ";
+        }
+        return result;
     }
 }
