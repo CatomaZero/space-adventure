@@ -20,7 +20,6 @@ public class GameController {
 
     //Metodo que inicializa variables y arranca los metodos
     public void doMove(String way,int key,IGraph<Integer> map){
-        System.out.println("Impresión 1, camino: "+way);
         this.way=new String[20];
         String[] waySplit=way.split(" ");
         makeAWay(waySplit,key,map);
@@ -46,7 +45,6 @@ public class GameController {
         for(String m:mayWay) {
             if (!m.isEmpty()) {
                 if (Integer.parseInt(m) == key) {
-                    System.out.println(currentNode.getKey() + " " + key);
                     return true;
                 }
             }
@@ -59,13 +57,11 @@ public class GameController {
         String movement2="";
 
         for(int i=0;i<way.length-1;i++){
-            System.out.println("Movement: "+way[i]);
             if(way[i]!=null&&movement1.isEmpty()){
                 movement1=way[i];
             }else if(way[i]!=null&&movement2.isEmpty()){
                 movement2=way[i];
             }
-            System.out.println("Movement 1: "+movement1+" Movement 2:"+movement2);
             if(!movement1.isEmpty()&&!movement2.isEmpty()){
                 if (!map.hasEdge(Integer.parseInt(movement1), Integer.parseInt(movement2))) {
                     removeMovement(movement1);

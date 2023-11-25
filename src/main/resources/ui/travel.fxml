@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Travel">
    <children>
       <TextField fx:id="travelField"  layoutX="226.0" layoutY="108.0" />
-      <Button layoutX="122.0" layoutY="228.0" mnemonicParsing="false" text="Aceptar" />
-      <Button layoutX="435.0" layoutY="228.0" mnemonicParsing="false" text="Denegar" />
+      <Button fx:id="acceptButton"  layoutX="122.0" layoutY="228.0" onAction="#onAccept" mnemonicParsing="false" text="Aceptar" />
+      <Button fx:id="noAcceptButton" layoutX="435.0" layoutY="228.0" onAction="#onNoAccept" mnemonicParsing="false" text="Denegar" />
    </children>
 </AnchorPane>

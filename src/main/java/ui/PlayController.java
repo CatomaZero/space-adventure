@@ -1,5 +1,6 @@
 package ui;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -85,11 +86,10 @@ public class PlayController implements Initializable {
         //Verificar que en el caso que sí haya conexiones entre planetas, como se deberá hacer el viaje
         doMove(way,closestNode);
 
-        System.out.println("lugar de inicio: "+playerPlace+" lugar destino: "+closestNode);
 
         if(howToMove(closestNode,playerPlace)) {
-            // Mover al jugador a la posición del nodo más cercano
             movePlayerToNode(closestNode);
+            Player.getInstance().setClose(false);
         }
 
         // Volver a dibujar el gráfico
@@ -131,7 +131,6 @@ public class PlayController implements Initializable {
                 System.out.println(way);
             }
         }
-        System.out.println(cont);
         String[] movement=new String[cont];
 
         int j=0;
@@ -147,6 +146,7 @@ public class PlayController implements Initializable {
             if (movement[0] != null && movement[movement.length - 1] != null && Integer.parseInt(movement[0]) == playerPlace && Integer.parseInt(movement[movement.length - 1]) == key) {
                 Player.getInstance().setTravel(movement);
                 HelloApplication.showWindow("travel", null);
+                return Player.getInstance().isMove();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("You can not travel that far :b");

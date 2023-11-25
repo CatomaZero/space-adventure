@@ -342,15 +342,17 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     @Override
     public String primMST(K startNodeKey, double gas) {
+        double gasInUse=0;
         int numNodes = nodes.size();
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         boolean[] visited = new boolean[numNodes];
 
         PriorityQueue<Edge<K>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
-        Node<K> startNode = nodes.get(0);
+        Node<K> startNode = searchNode(startNodeKey);
+
         visited[nodes.indexOf(startNode)] = true;
 
-        while (mstEdges.size() < numNodes - 1) {
+        while (mstEdges.size() < numNodes - 1&& gasInUse <= gas) {
             int startNodeIndex = nodes.indexOf(startNode);
             for (int i = 0; i < numNodes; i++) {
                 if (!visited[i] && adjacencyMatrix.get(startNodeIndex).get(i) != Double.POSITIVE_INFINITY) {
@@ -361,10 +363,10 @@ public class MatrixGraph<K> implements IGraph<K> {
 
             Edge<K> minEdge = priorityQueue.poll();
             Node<K> nextNode = minEdge.getTerminal();
-
+            gasInUse+=minEdge.getWeight();
             int nextNodeIndex = nodes.indexOf(nextNode);
 
-            if (!visited[nextNodeIndex]) {
+            if (!visited[nextNodeIndex]&&gasInUse <= gas) {
                 mstEdges.add(minEdge);
                 visited[nextNodeIndex] = true;
                 startNode = nextNode;

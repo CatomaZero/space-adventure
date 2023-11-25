@@ -8,6 +8,6 @@
    <children>
       <Canvas fx:id="indicators" height="70.0" width="1000.0" />
       <Canvas fx:id="mapCanvas" height="620.0" width="1000.0" />
-      <Button fx:id="automaticTravel" onAction="#onAutomaticTravel" mnemonicParsing="false" text="Button" />
+      <Button fx:id="automaticTravel" mnemonicParsing="false" onAction="#onAutomaticTravel" prefHeight="59.0" prefWidth="81.0" text="Automatic" translateX="50.0" translateY="-50.0" />
    </children>
 </VBox>

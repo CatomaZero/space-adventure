@@ -285,7 +285,7 @@ public class ListGraph<K> implements IGraph<K> {
         boolean[] visited = new boolean[numNodes];
 
         PriorityQueue<Edge<K>> priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(Edge::getWeight));
-        Node<K> startNode = (Node<K>) searchNode(startNodeKey);
+        Node<K> startNode = searchNode(startNodeKey);
 
         visited[adjacency.indexOf(startNode)] = true;
 

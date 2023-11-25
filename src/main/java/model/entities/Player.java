@@ -11,6 +11,8 @@ public class Player {
     private double x;
     private double y;
     private String[] travel;
+    private boolean move;
+    private boolean close=false;
 
     public Player() {
         this.life = 100;
@@ -51,5 +53,22 @@ public class Player {
 
     public String[] getTravel() {
         return travel;
+    }
+
+    public boolean isMove() {
+        return move;
+    }
+
+    public void setMove(boolean move) {
+        this.close=true;
+        this.move = move;
+    }
+
+    public void setClose(boolean close) {
+        this.close = close;
+    }
+
+    public boolean isClose() {
+        return close;
     }
 }
