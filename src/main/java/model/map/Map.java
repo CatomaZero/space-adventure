@@ -4,8 +4,10 @@ import javafx.scene.image.Image;
 import model.entities.Player;
 import structure.List.Edge;
 import structure.List.ListGraph;
+import structure.Matrix.MatrixGraph;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Map {
@@ -17,10 +19,10 @@ public class Map {
     public Map() {
         map = new ListGraph<>();
         enviroments = new ArrayList<>();
-        initializeMap();
+        initializeMapList();
     }
 
-    public void initializeMap() {
+    public void initializeMapList() {
         int canvasWidth = 1000 - 100;
         int canvasHeight = 620 - 100;
         int minDistance = 50;
@@ -75,6 +77,10 @@ public class Map {
         } while (indexRamiel % 5 == 0 || indexRamiel == indexNarajita);
 
         Player.getInstance().setCoordinates(enviroments.get(indexRamiel).getX(), enviroments.get(indexRamiel).getY());
+    }
+
+    public void initializeMapMatrix(){
+
     }
 
     private boolean isValidPosition(double x, double y, ArrayList<Enviroment> existingEnviroments, int minDistance) {

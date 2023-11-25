@@ -9,6 +9,8 @@ public class MatrixGraph<K> implements IGraph<K> {
     private ArrayList<Node<K>> nodes;
     private ArrayList<Edge<K>> edges;
 
+    private boolean founded;
+
     public MatrixGraph() {
         this.adjacencyMatrix = new ArrayList<>();
         this.nodes = new ArrayList<>();
@@ -188,13 +190,13 @@ public class MatrixGraph<K> implements IGraph<K> {
         }
     }
 
-    public String DFS(K key) {
-        Node<K> startNode = findNode(key);
-
+    public String DFS(K key,K root,int times) {
+        Node<K> startNode = findNode(root);
+        founded=false;
         if (startNode != null) {
             StringBuilder result = new StringBuilder();
             boolean[] visited = new boolean[nodes.size()];
-            dfsRecursive(startNode, visited, result);
+            dfsRecursive(startNode,key,times,visited, result);
 
             return result.toString().trim();
         } else {
@@ -202,13 +204,18 @@ public class MatrixGraph<K> implements IGraph<K> {
         }
     }
 
-    private void dfsRecursive(Node<K> current, boolean[] visited, StringBuilder result) {
+    private void dfsRecursive(Node<K> current,K key,int times, boolean[] visited, StringBuilder result) {
         visited[nodes.indexOf(current)] = true;
         result.append(current.getKey()).append(" ");
-
-        for (int i = 0; i < nodes.size(); i++) {
-            if (adjacencyMatrix.get(nodes.indexOf(current)).get(i) != Double.POSITIVE_INFINITY && !visited[i]) {
-                dfsRecursive(nodes.get(i), visited, result);
+        if(current.getKey()==key){
+            founded=true;
+        }
+        if(!founded) {
+            for (int i = 0; i < nodes.size(); i++) {
+                if (adjacencyMatrix.get(nodes.indexOf(current)).get(i) != Double.POSITIVE_INFINITY && !visited[i] && times > 0) {
+                    times--;
+                    dfsRecursive(nodes.get(i), key, times, visited, result);
+                }
             }
         }
     }

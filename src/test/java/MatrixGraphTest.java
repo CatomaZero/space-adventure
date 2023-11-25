@@ -234,17 +234,17 @@ public class MatrixGraphTest extends TestCase {
 
     public void testDFS1() {
         setUpStage4();
-        assertEquals("1 2 4 5 6 3 7 8", matrixGraph.DFS(1));
+        assertEquals("1 2 4 5 6 3 7 8", matrixGraph.DFS(8,1,20));
     }
 
     public void testDFS2() {
         setupStage5();
-        assertEquals("0 1 2 3 4 5 6 7 8", matrixGraph.DFS(0));
+        assertEquals("0 1 2 3 4 5 6 7 8", matrixGraph.DFS(8,0,20));
     }
 
     public void testDFS3() {
         setUpStage6();
-        assertEquals("Node not found.", matrixGraph.DFS(20));
+        assertEquals("Node not found.", matrixGraph.DFS(8,20,20));
     }
 
     public void testDijkstra1() {

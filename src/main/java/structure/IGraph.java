@@ -17,7 +17,7 @@ public interface IGraph<K> {
 
     String BFS(K key);
 
-    String DFS(K key);
+    String DFS(K key,K root,int times);
 
     double[] dijkstra(K key);
 
