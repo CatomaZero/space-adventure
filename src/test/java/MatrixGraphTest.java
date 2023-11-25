@@ -1,5 +1,4 @@
 import junit.framework.TestCase;
-import structure.List.ListGraph;
 import structure.Matrix.MatrixGraph;
 
 import java.util.Arrays;
@@ -181,6 +180,81 @@ public class MatrixGraphTest extends TestCase {
         assertEquals("Edge added successfully.", result);
     }
 
+    public void testConsult1(){
+        setUpStage1();
+        String actual = matrixGraph.consult();
+        assertEquals("", actual);
+    }
+
+    public void testConsult2(){
+        setUpStage2();
+        String expected = "1\n" +
+                "2\n" +
+                "3";
+        String actual = matrixGraph.consult();
+        assertEquals(expected, actual);
+    }
+
+    public void testConsult3(){
+        setUpStage3();
+        String expected = "0\n" +
+                "(0, 1)   Weight: 2.0\n" +
+                "(0, 3)   Weight: 6.0\n" +
+                "1\n" +
+                "(0, 1)   Weight: 2.0\n" +
+                "(1, 2)   Weight: 3.0\n" +
+                "(1, 3)   Weight: 8.0\n" +
+                "(1, 4)   Weight: 5.0\n" +
+                "2\n" +
+                "(1, 2)   Weight: 3.0\n" +
+                "(2, 4)   Weight: 7.0\n" +
+                "3\n" +
+                "(0, 3)   Weight: 6.0\n" +
+                "(1, 3)   Weight: 8.0\n" +
+                "(3, 4)   Weight: 9.0\n" +
+                "4\n" +
+                "(1, 4)   Weight: 5.0\n" +
+                "(2, 4)   Weight: 7.0\n" +
+                "(3, 4)   Weight: 9.0";
+        String actual = matrixGraph.consult();
+        assertEquals(expected, actual);
+    }
+
+    public void testConsultNode1(){
+        setUpStage1();
+        assertEquals("Node not found.", matrixGraph.consultNode(1));
+    }
+
+    public void testConsultNode2(){
+        setUpStage2();
+        assertEquals("3", matrixGraph.consultNode(3));
+    }
+
+    public void testConsultNode3(){
+        setUpStage3();
+        String result = "4\n" +
+                "(1, 4)   Weight: 5.0\n" +
+                "(2, 4)   Weight: 7.0\n" +
+                "(3, 4)   Weight: 9.0";
+        assertEquals(result, matrixGraph.consultNode(4));
+    }
+
+    public void testConsultEdge1(){
+        setUpStage3();
+        assertEquals("Edge not found.", matrixGraph.consultEdge(0, 4));
+    }
+
+    public void testConsultEdge2(){
+        setUpStage4();
+        assertEquals("(2, 4)   Weight: 5.0", matrixGraph.consultEdge(2, 4));
+    }
+
+    public void testConsultEdge3(){
+        setupStage5();
+        assertEquals("(2, 8)   Weight: 2.0", matrixGraph.consultEdge(2, 8));
+    }
+
+
     public void testDeleteNode1() {
         setUpStage1();
         String result = matrixGraph.deleteNode(1);
@@ -304,7 +378,7 @@ public class MatrixGraphTest extends TestCase {
                 "(1, 2)   Weight: 3.0\n" +
                 "(1, 4)   Weight: 5.0\n" +
                 "(0, 3)   Weight: 6.0";
-        assertEquals(result, matrixGraph.primMST());
+        assertEquals(result, matrixGraph.primMST(0, 10));
     }
 
     public void testPrim2(){
@@ -317,7 +391,7 @@ public class MatrixGraphTest extends TestCase {
                 "(2, 8)   Weight: 2.0\n" +
                 "(2, 3)   Weight: 7.0\n" +
                 "(3, 4)   Weight: 9.0";
-        assertEquals(result, matrixGraph.primMST());
+        assertEquals(result, matrixGraph.primMST(1, 10));
     }
 
     public void testPrim3(){
@@ -328,7 +402,7 @@ public class MatrixGraphTest extends TestCase {
                 "(3, 4)   Weight: 10.0\n" +
                 "(4, 6)   Weight: 2.0\n" +
                 "(4, 5)   Weight: 6.0";
-        assertEquals(result, matrixGraph.primMST());
+        assertEquals(result, matrixGraph.primMST(1,4));
     }
 
     public void testKruskal1(){

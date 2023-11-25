@@ -37,4 +37,12 @@ public class Node<K> implements INode<K> {
         }
         return null;
     }
+
+    public String toString(){
+        String result = key + "\n";
+        for (Edge<K> e : edges) {
+            result += e.toString() + "\n";
+        }
+        return result.trim();
+    }
 }

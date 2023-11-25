@@ -1,8 +1,4 @@
 package structure;
-
-import structure.List.Node;
-import structure.Matrix.Edge;
-
 import java.util.ArrayList;
 
 public interface IGraph<K> {
@@ -10,7 +6,6 @@ public interface IGraph<K> {
     String addEdge(K keyInitial, K keyTerminal, Double weight);
     String deleteNode(K key);
     String deleteEdge(K keyInitial, K keyTerminal);
-    String consult();
     String consultNode(K key);
     String consultEdge(K keyInitial, K keyTerminal);
     String BFS(K key);

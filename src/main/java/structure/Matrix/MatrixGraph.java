@@ -3,6 +3,7 @@ package structure.Matrix;
 import structure.IGraph;
 import structure.INode;
 
+import java.security.interfaces.EdECKey;
 import java.util.*;
 
 public class MatrixGraph<K> implements IGraph<K> {
@@ -125,23 +126,27 @@ public class MatrixGraph<K> implements IGraph<K> {
             return "";
         }
 
-        StringBuilder result = new StringBuilder("Nodes: ");
+        String result = "";
         for (Node<K> node : nodes) {
-            result.append(node.getKey()).append(" ");
+            result += consultNode(node.getKey()) + "\n";
         }
-
-        result.append("\nEdges: ");
-        for (Edge<K> edge : edges) {
-            result.append(edge.toString()).append(" ");
-        }
-
-        return result.toString().trim();
+        return result.trim();
     }
 
     public String consultNode(K key) {
         Node<K> node = searchNode(key);
         if (node != null) {
-            return node.toString();
+            String result = key + "\n";
+            for(K e : getNeighbors(key)){
+                Node<K> neighbor = searchNode(e);
+                if(neighbor!=null){
+                    Edge<K> edge = findEdge(node, neighbor);
+                    if(edge!=null){
+                        result += edge.toString() +"\n";
+                    }
+                }
+            }
+            return result.trim();
         } else {
             return "Node not found.";
         }
@@ -390,16 +395,12 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     @Override
     public int size() {
-        return 0;
+        return nodes.size();
     }
 
     @Override
     public boolean hasEdge(K i, K targetNode) {
         return false;
-    }
-
-    private structure.List.Node<Integer> searchNode(int id) {
-        return null;
     }
 
     @Override
@@ -427,24 +428,6 @@ public class MatrixGraph<K> implements IGraph<K> {
         parent.put(rootX, rootY);
     }
 
-    private ArrayList<Edge<K>> getAllEdges() {
-        ArrayList<Edge<K>> allEdges = new ArrayList<>();
-        for (List<Double> row : adjacencyMatrix) {
-            for (Double weight : row) {
-                if (weight != Double.POSITIVE_INFINITY) {
-                    int initialIndex = adjacencyMatrix.indexOf(row);
-                    int terminalIndex = row.indexOf(weight);
-                    Node<K> initialNode = nodes.get(initialIndex);
-                    Node<K> terminalNode = nodes.get(terminalIndex);
-
-                    Edge<K> edge = new Edge<>(weight, initialNode, terminalNode);
-                    allEdges.add(edge);
-                }
-            }
-        }
-        return allEdges;
-    }
-
     public Node<K> searchNode(K key) {
         for (Node<K> node : nodes) {
             if (node.getKey().equals(key)) {
@@ -456,7 +439,7 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     private Edge<K> findEdge(Node<K> initial, Node<K> terminal) {
         for (Edge<K> edge : edges) {
-            if (edge.getInitial().equals(initial) && edge.getTerminal().equals(terminal)) {
+            if ((edge.getInitial().equals(initial) && edge.getTerminal().equals(terminal)) || (edge.getInitial().equals(terminal) && edge.getTerminal().equals(initial))) {
                 return edge;
             }
         }
