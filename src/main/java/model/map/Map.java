@@ -17,6 +17,7 @@ public class Map {
     private IGraph<Integer> map;
     private ArrayList<Enviroment> enviroments;
 
+
     public Map(TypeImplementation imp) {
         enviroments = new ArrayList<>();
         initializeMap(imp);

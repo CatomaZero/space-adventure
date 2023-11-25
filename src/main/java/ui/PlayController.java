@@ -34,6 +34,7 @@ public class PlayController implements Initializable {
 
     private Tooltip planetTooltip;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<String> choices = new ArrayList<>();
@@ -236,7 +237,9 @@ public class PlayController implements Initializable {
     }
 
     public void onAutomaticTravel(ActionEvent actionEvent) {
-        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),40);
+        String prm=map.getMap().primMST(findClosestNode(Player.getInstance().getX(),Player.getInstance().getY()),20);
         System.out.println(prm);
+        controller.doAutomaticWay(prm,map);
+        System.out.println(Arrays.toString(controller.getWay()));
     }
 }

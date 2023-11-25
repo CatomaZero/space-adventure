@@ -6,9 +6,15 @@ import structure.INode;
 import structure.List.ListGraph;
 import structure.List.Node;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class GameController {
 
     private String[] way;
+
+    private String lastIndex;
+
 
     public GameController(){
     }
@@ -78,6 +84,38 @@ public class GameController {
                 way[i] = null;
                 break;
             }
+        }
+    }
+
+    public void doAutomaticWay(String prim, Map map){
+        int currentX;
+        int currentY;
+        int i = 0;
+        this.way = new String[20];
+        Pattern pattern = Pattern.compile("\\((\\d+), (\\d+)\\)");
+
+        Matcher matcher = pattern.matcher(prim);
+
+        if (matcher.find()) {
+
+            do {
+                currentX = Integer.parseInt(matcher.group(1));
+                if(i==0){
+                    this.way[0]= String.valueOf(currentX);
+                    lastIndex= String.valueOf(currentX);
+                    i++;
+                }
+                currentY = Integer.parseInt(matcher.group(2));
+                System.out.println("Last index:"+lastIndex+"Current Y:"+currentY);
+                if (map.getMap().hasEdge(Integer.parseInt(lastIndex), currentY)) {
+                    this.way[i] = String.valueOf(currentY);
+                    if(!lastIndex.equals(matcher.group(1))&&i!=0){
+                        this.way[i] = null;
+                    }
+                    this.lastIndex=String.valueOf(currentY);
+                    i++;
+                }
+            } while (matcher.find());
         }
     }
 

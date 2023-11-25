@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e591c032-9340-46b9-a313-659210623444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/List/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/structure/Matrix/MatrixGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/PlayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatrixGraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/map/Map.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/PlayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/PlayController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,6 +211,7 @@
       <workItem from="1700898139388" duration="4204000" />
       <workItem from="1700906065673" duration="1712000" />
       <workItem from="1700916394128" duration="5476000" />
+      <workItem from="1700929092210" duration="180000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String addNode(K key) {
-        if(searchNode(key) != null){
+        if (searchNode(key) != null) {
             return "The addition of this node is not possible as there is one with the same key.";
 
         }
@@ -39,7 +39,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String addEdge(K keyInitial, K keyTerminal, Double weight) {
-        if(isEmptyGraph()){
+        if (isEmptyGraph()) {
             return "Empty graph";
         }
 
@@ -94,13 +94,13 @@ public class MatrixGraph<K> implements IGraph<K> {
         Node<K> initialNode = searchNode(keyInitial);
         Node<K> terminalNode = searchNode(keyTerminal);
 
-        if(initialNode == null || terminalNode == null){
+        if (initialNode == null || terminalNode == null) {
             return "One or both nodes not found.";
         }
 
         int initialIndex = nodes.indexOf(initialNode);
         int terminalIndex = nodes.indexOf(terminalNode);
-        if(deleteEdgeAux(initialNode, terminalNode)){
+        if (deleteEdgeAux(initialNode, terminalNode)) {
             adjacencyMatrix.get(initialIndex).set(terminalIndex, Double.POSITIVE_INFINITY);
             adjacencyMatrix.get(terminalIndex).set(initialIndex, Double.POSITIVE_INFINITY);
 
@@ -122,7 +122,7 @@ public class MatrixGraph<K> implements IGraph<K> {
     }
 
     public String consult() {
-        if(isEmptyGraph()){
+        if (isEmptyGraph()) {
             return "";
         }
 
@@ -137,12 +137,12 @@ public class MatrixGraph<K> implements IGraph<K> {
         Node<K> node = searchNode(key);
         if (node != null) {
             String result = key + "\n";
-            for(K e : getNeighbors(key)){
+            for (K e : getNeighbors(key)) {
                 Node<K> neighbor = searchNode(e);
-                if(neighbor!=null){
+                if (neighbor != null) {
                     Edge<K> edge = findEdge(node, neighbor);
-                    if(edge!=null){
-                        result += edge.toString() +"\n";
+                    if (edge != null) {
+                        result += edge.toString() + "\n";
                     }
                 }
             }
@@ -342,7 +342,7 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     @Override
     public String primMST(K startNodeKey, double gas) {
-        double gasInUse=0;
+        double gasInUse = 0;
         int numNodes = nodes.size();
         ArrayList<Edge<K>> mstEdges = new ArrayList<>();
         boolean[] visited = new boolean[numNodes];
@@ -352,7 +352,7 @@ public class MatrixGraph<K> implements IGraph<K> {
 
         visited[nodes.indexOf(startNode)] = true;
 
-        while (mstEdges.size() < numNodes - 1&& gasInUse <= gas) {
+        while (mstEdges.size() < numNodes - 1 && gasInUse <= gas) {
             int startNodeIndex = nodes.indexOf(startNode);
             for (int i = 0; i < numNodes; i++) {
                 if (!visited[i] && adjacencyMatrix.get(startNodeIndex).get(i) != Double.POSITIVE_INFINITY) {
@@ -363,10 +363,10 @@ public class MatrixGraph<K> implements IGraph<K> {
 
             Edge<K> minEdge = priorityQueue.poll();
             Node<K> nextNode = minEdge.getTerminal();
-            gasInUse+=minEdge.getWeight();
+            gasInUse += minEdge.getWeight();
             int nextNodeIndex = nodes.indexOf(nextNode);
 
-            if (!visited[nextNodeIndex]&&gasInUse <= gas) {
+            if (!visited[nextNodeIndex] && gasInUse <= gas) {
                 mstEdges.add(minEdge);
                 visited[nextNodeIndex] = true;
                 startNode = nextNode;
@@ -409,13 +409,13 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     @Override
     public boolean hasEdge(K i, K targetNode) {
-        return false;
+        return findEdge(searchNode(i), searchNode(targetNode)) != null;
     }
 
     @Override
     public ArrayList<K> getNeighbors(K id) {
         ArrayList<K> neighbors = new ArrayList<>();
-        for (Edge<K> edge : edges){
+        for (Edge<K> edge : edges) {
             if ((edge.getInitial().getKey() == id || (edge.getTerminal().getKey() == id))) {
                 K neighborId = (edge.getInitial().getKey() == id) ? edge.getTerminal().getKey() : edge.getInitial().getKey();
                 neighbors.add(neighborId);
@@ -426,8 +426,8 @@ public class MatrixGraph<K> implements IGraph<K> {
 
     public ArrayList<Edge<K>> getNeighborsEdge(K id) {
         ArrayList<Edge<K>> neighbors = new ArrayList<>();
-        for (Edge<K> edge : edges){
-            if ((edge.getInitial().getKey() .equals(id) || (edge.getTerminal().getKey().equals(id)))) {
+        for (Edge<K> edge : edges) {
+            if ((edge.getInitial().getKey().equals(id) || (edge.getTerminal().getKey().equals(id)))) {
                 neighbors.add(edge);
             }
         }
