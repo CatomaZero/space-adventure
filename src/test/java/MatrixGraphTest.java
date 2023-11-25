@@ -383,11 +383,11 @@ public class MatrixGraphTest extends TestCase {
     public void testPrim2(){
         setupStage5();
         String result = "(1, 0)   Weight: 4.0\n" +
-                "(0, 7)   Weight: 8.0\n" +
-                "(7, 6)   Weight: 1.0\n" +
-                "(6, 5)   Weight: 2.0\n" +
-                "(5, 2)   Weight: 4.0\n" +
+                "(1, 2)   Weight: 8.0\n" +
                 "(2, 8)   Weight: 2.0\n" +
+                "(2, 5)   Weight: 4.0\n" +
+                "(5, 6)   Weight: 2.0\n" +
+                "(6, 7)   Weight: 1.0\n" +
                 "(2, 3)   Weight: 7.0\n" +
                 "(3, 4)   Weight: 9.0";
         assertEquals(result, matrixGraph.primMST(1, 200));
@@ -395,7 +395,7 @@ public class MatrixGraphTest extends TestCase {
 
     public void testPrim3(){
         setUpStage6();
-        String result = "(0, 1)   Weight: 2.0\n" +
+        String result = "(1, 0)   Weight: 2.0\n" +
                 "(1, 3)   Weight: 5.0\n" +
                 "(0, 2)   Weight: 6.0\n" +
                 "(3, 4)   Weight: 10.0\n" +

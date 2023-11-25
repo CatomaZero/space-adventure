@@ -96,7 +96,7 @@
       <recent name="structure.Matrix" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ui.HelloApplication" />
       <module name="space-adventure" />
